@@ -1,0 +1,6 @@
+ [{id: 1, title: 'RECEIPT-556783', time: '2 days ago', price: '22$'},
+      {id: 2, title: 'RECEIPT-773245', time: '11/14/2017 1:33 PM', price: '12$'},
+      {id: 10, title: 'RECEIPT-657854', time: '11/13/2017 4:56 PM', price: '$'},
+      {id: 15, title: 'RECEIPT-273546', time: '11/2/2017 9:03 AM', price: '120$'},
+      {id: 11, title: 'RECEIPT-168750', time: '11/1/2017 10:56 AM', price: '22$'}
+      ];
