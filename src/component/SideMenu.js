@@ -280,7 +280,7 @@ const menusSecondaryItems = [
   {
     id: 190,
     title: 'Login',
-    icon: 'ios-person',
+    icon: 'heart',
     key: 'login'
   },
   {
@@ -321,5 +321,12 @@ const menusSecondaryItems = [
     title: 'Newsletter',
     icon: 'md-paper',
     key: 'newsletter'
+  },
+  {
+    id: 25,
+    key: 'qrcode',
+    title: 'QR Code',
+    icon: 'md-paper',
+    key: 'qrcode'
   }
 ];
