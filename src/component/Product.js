@@ -5,7 +5,8 @@
 // React native and others libraries imports
 import React, { Component } from 'react';
 import { Image } from 'react-native';
-import { View, Col, Card, CardItem, Body, Button } from 'native-base';
+import { View, Col, CardItem, Body, Button } from 'native-base';
+import { Card } from 'react-native-material-design'
 import { Actions } from 'react-native-router-flux';
 
 // Our custom files and classes import
@@ -15,8 +16,7 @@ import Text from './Text';
 export default class product extends Component {
   render() {
     return(
-      <Col style={this.props.isRight ? style.leftMargin : style.rightMargin}>
-        <Card transparent>
+        <Card style={{width:325, height: 210}}>
             <CardItem cardBody>
               <Button transparent style={style.button} onPress={() => this.pressed()}>
                 <Image source={{uri: this.props.product.image}} style={style.image}/>
@@ -34,15 +34,14 @@ export default class product extends Component {
                       numberOfLines={1}
                     >{this.props.product.title}</Text>
                     <View style={{flex: 1, width: '100%', alignItems: 'center'}}>
-                      <View style={style.line} />
-                      <Text style={style.price}>{this.props.product.price}</Text>
+                      <View />
+                      <Text style={style.price}>PRICE: {this.props.product.price}</Text>
                       <View style={style.line} />
                     </View>
                 </Body>
               </Button>
             </CardItem>
           </Card>
-      </Col>
     );
   }
 
@@ -52,8 +51,8 @@ export default class product extends Component {
 }
 
 const style = {
-  button: {flex: 1, height: 250, paddingLeft: 4, paddingRight: 4},
-  image: {height: 250, width: null, flex: 1},
+  button: {flex: 1, height: 150},
+  image: {height: 150, width: 340},
   leftMargin: {
     marginLeft: 7,
     marginRight: 0,
@@ -66,22 +65,19 @@ const style = {
   },
   border: {
     position: 'absolute',
-    top: 10,
-    left: 10,
-    right: 10,
-    bottom: 10,
-    borderWidth: 1,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderWidth: 0,
     borderColor: 'rgba(253, 253, 253, 0.2)'
   },
   price: {
-    fontSize: 16,
-    paddingLeft: 5,
-    paddingRight: 5,
+    fontSize: 20,
     zIndex: 1000,
     backgroundColor: '#fdfdfd'
   },
   line: {
-    width: '100%',
     height: 1,
     backgroundColor: '#7f8c8d',
     position: 'absolute',

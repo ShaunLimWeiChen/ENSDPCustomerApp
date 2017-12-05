@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { Image, Dimensions, TouchableWithoutFeedback, AsyncStorage } from 'react-native';
 import { View, Container, Content, Button, Left, Right, Icon, Picker, Item, Grid, Col, Toast, Text as NBText } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import { Card } from 'react-native-material-design'
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 // Our custom files and classes import
@@ -141,14 +142,14 @@ export default class Product extends Component {
               </Col>
               <Col size={3}>
                 <View style={{flex: 1, flexDirection: 'row'}}>
-                  <Button style={{flex: 1}} icon light onPress={() => this.setState({quantity: this.state.quantity>1 ? this.state.quantity-1 : 1})} >
+                  <Button style={{backgroundColor: Colors.navbarBackgroundColor}} onPress={() => this.setState({quantity: this.state.quantity>1 ? this.state.quantity-1 : 1})} >
                     <Icon name='ios-remove-outline' />
                   </Button>
                   <View style={{flex: 4, justifyContent: 'center', alignItems: 'center', paddingLeft: 30, paddingRight: 30}}>
                     <Text style={{fontSize: 18}}>{this.state.quantity}</Text>
                   </View>
-                  <Button style={{flex: 1}} icon light onPress={() => this.setState({quantity: this.state.quantity+1})}>
-                    <Icon name='ios-add' />
+                  <Button style={{backgroundColor: Colors.navbarBackgroundColor}} onPress={() => this.setState({quantity: this.state.quantity+1})}>
+                    <Icon name='ios-heart' />
                   </Button>
                 </View>
               </Col>
@@ -165,14 +166,12 @@ export default class Product extends Component {
               </Button>
               </Col>
             </Grid>
-            <View style={{marginTop: 15, padding: 10, borderWidth: 1, borderRadius: 3, borderColor: 'rgba(149, 165, 166, 0.3)'}}>
-              <Text style={{marginBottom: 5}}>Description</Text>
-              <View style={{width: 50, height: 1, backgroundColor: 'rgba(44, 62, 80, 0.5)', marginLeft: 7, marginBottom: 10}} />
-              <NBText note>
-                {this.state.product.description}
-              </NBText>
-            </View>
-          </View>
+              <Card style={{marginTop: 15, padding: 12, width:350, borderWidth: 1, borderRadius: 3, borderColor: 'rgba(149, 165, 166, 0.3)'}}>
+                <Text>
+                Description: {"\n"} 
+                {this.state.product.description}</Text>
+              </Card>
+              </View>
           <View style={{marginTop: 15, paddingLeft: 12, paddingRight: 12}}>
             <Text style={{marginBottom: 5}}>Similar items</Text>
             <View style={{width: 50, height: 1, backgroundColor: 'rgba(44, 62, 80, 0.5)', marginLeft: 7, marginBottom: 10}} />
