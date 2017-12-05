@@ -4,6 +4,7 @@ import {
   View,
   StyleSheet, Linking, Button
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import Camera from 'react-native-camera';
 

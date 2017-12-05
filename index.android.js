@@ -5,5 +5,6 @@
 
 import { AppRegistry } from 'react-native';
 import Main from './src/Main';
+console.disableYellowBox = true;
 
 AppRegistry.registerComponent('Shop', () => Main);

@@ -30,7 +30,7 @@ export default class product extends Component {
             >
                 <Body>
                     <Text
-                      style={{fontSize: 16}}
+                      style={{fontSize: 17}}
                       numberOfLines={1}
                     >{this.props.product.title}</Text>
                     <View style={{flex: 1, width: '100%', alignItems: 'center'}}>

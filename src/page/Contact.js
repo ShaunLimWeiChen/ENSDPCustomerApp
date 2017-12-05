@@ -56,8 +56,8 @@ export default class Contact extends Component {
                     onChangeText={(text) => this.setState({message: text})}/>
               </Item>
               <View style={{alignItems: 'center'}}>
-                <Button onPress={() => this.send()} style={{backgroundColor: Colors.navbarBackgroundColor, marginTop: 20}}>
-                  <Text style={{color: '#fdfdfd'}}>Send</Text>
+                <Button onPress={() => this.send()} style={{backgroundColor: Colors.navbarBackgroundColor, width:70, marginTop: 20}}>
+                  <Text style={{color: '#fdfdfd', marginLeft: 20}}>Send</Text>
                 </Button>
               </View>
             </View>

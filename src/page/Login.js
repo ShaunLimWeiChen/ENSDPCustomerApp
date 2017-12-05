@@ -60,8 +60,8 @@ export default class Login extends Component {
           </Item>
           {this.state.hasError?<Text style={{color: "#c0392b", textAlign: 'center', marginTop: 10}}>{this.state.errorText}</Text>:null}
           <View style={{alignItems: 'center'}}>
-            <Button onPress={() => this.login()} style={{backgroundColor: Colors.navbarBackgroundColor, width: 60, marginTop: 20}}>
-              <Text style={{color: '#fdfdfd'}}>Login</Text>
+            <Button onPress={() => this.login()} style={{backgroundColor: Colors.navbarBackgroundColor, width: 80, marginTop: 20}}>
+              <Text style={{color: '#fdfdfd', marginLeft: 20}}>Login</Text>
             </Button>
           </View>
         </View>

@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { Alert, AsyncStorage } from 'react-native';
 import { Container, Content, View, Header, Icon, Button, Left, Right, Body, Title, List, ListItem, Thumbnail, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import { Card } from 'react-native-material-design'
 
 // Our custom files and classes import
 import Colors from '../Colors';
@@ -59,6 +60,7 @@ export default class WishList extends Component {
     let items = [];
     this.state.items.map((item, i) => {
       items.push(
+        <Card style={{width:330, flex: 1}}>
         <ListItem
           key={i}
           last={this.state.items.length === i+1}
@@ -78,6 +80,7 @@ export default class WishList extends Component {
             </Button>
           </Right>
         </ListItem>
+         </Card>
       );
     });
     return items;
@@ -90,7 +93,7 @@ export default class WishList extends Component {
   removeItemPressed(item) {
     Alert.alert(
       'Remove '+item.title,
-      'Are you sure you want this item from your wishlist ?',
+      'Are you sure you want this item from your wishlist?',
       [
         {text: 'No', onPress: () => console.log('No Pressed'), style: 'cancel'},
         {text: 'Yes', onPress: () => this.removeItem(item)},

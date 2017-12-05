@@ -48,12 +48,12 @@ export default class Signup extends Component {
     );
     return(
       <Container style={{backgroundColor: '#fdfdfd'}}>
-        <Navbar left={left} right={right} title="SIGN UP" />
+        <Navbar left={left} right={right} title="REGISTER" />
         <ScrollView contentContainerStyle={{flexGrow: 1}}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 50, paddingRight: 50}}>
             <View style={{marginBottom: 35, width: '100%'}}>
-              <Text style={{fontSize: 24, fontWeight: 'bold', textAlign: 'left', width: '100%', color: Colors.navbarBackgroundColor}}>Create your account, </Text>
-              <Text style={{fontSize: 18, textAlign: 'left', width: '100%', color: '#687373'}}>Signup to continue </Text>
+              <Text style={{fontSize: 24, fontWeight: 'bold', textAlign: 'left', width: '100%', color: Colors.navbarBackgroundColor}}>Create your account </Text>
+              <Text style={{fontSize: 18, textAlign: 'left', width: '100%', color: '#687373'}}>Register to continue </Text>
             </View>
             <Item>
                 <Icon active name='ios-mail' style={{color: '#687373'}} />
@@ -73,12 +73,12 @@ export default class Signup extends Component {
             </Item>
             <Item>
                 <Icon active name='ios-lock' style={{color: '#687373'}} />
-                <Input placeholder='Repeat your password' onChangeText={(text) => this.setState({rePassword: text})} secureTextEntry={true} placeholderTextColor="#687373" />
+                <Input placeholder='Retype password' onChangeText={(text) => this.setState({rePassword: text})} secureTextEntry={true} placeholderTextColor="#687373" />
             </Item>
             {this.state.hasError?<Text style={{color: "#c0392b", textAlign: 'center', marginTop: 10}}>{this.state.errorText}</Text>:null}
             <View style={{alignItems: 'center'}}>
-              <Button onPress={() => this.signup()} style={{backgroundColor: Colors.navbarBackgroundColor, marginTop: 20}}>
-                <Text style={{color: '#fdfdfd'}}>Signup</Text>
+              <Button onPress={() => this.signup()} style={{backgroundColor: Colors.navbarBackgroundColor, width: 90, marginTop: 20}}>
+                <Text style={{color: '#fdfdfd', marginLeft:20}}>Register</Text>
               </Button>
             </View>
           </View>

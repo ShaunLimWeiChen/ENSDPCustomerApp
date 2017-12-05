@@ -7,6 +7,7 @@ import React, { Component } from 'react';
 import { Alert, AsyncStorage } from 'react-native';
 import { Container, Content, View, Header, Icon, Button, Left, Right, Body, Title, List, ListItem, Thumbnail, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import { Card } from 'react-native-material-design';
 
 // Our custom files and classes import
 import Colors from '../Colors';
@@ -58,7 +59,7 @@ export default class Cart extends Component {
                 </Col>
                 <Col style={{paddingLeft: 5, paddingRight: 10}}>
                   <Button onPress={() => this.removeAllPressed()} style={{borderWidth: 1, borderColor: Colors.navbarBackgroundColor}} block iconRight transparent>
-                    <Text style={{color: Colors.navbarBackgroundColor}}>Emtpy Cart</Text>
+                    <Text style={{color: Colors.navbarBackgroundColor}}>Empty Cart</Text>
                     <Icon style={{color: Colors.navbarBackgroundColor}} name='ios-trash-outline' />
                   </Button>
                 </Col>
@@ -73,12 +74,13 @@ export default class Cart extends Component {
     let items = [];
     this.state.cartItems.map((item, i) => {
       items.push(
+      <Card style={{width:341}}>
         <ListItem
           key={i}
           last={this.state.cartItems.length === i+1}
           onPress={() => this.itemClicked(item)}
         >
-          <Thumbnail square style={{width: 110, height: 90}} source={{ uri: item.image }} />
+          <Thumbnail square style={{width: 110, height: 100}} source={{ uri: item.image }} />
           <Body style={{paddingLeft: 10}}>
             <Text style={{fontSize: 18}}>
               {item.quantity > 1 ? item.quantity+"x " : null}
@@ -94,6 +96,7 @@ export default class Cart extends Component {
             </Button>
           </Right>
         </ListItem>
+        </Card>
       );
     });
     return items;
@@ -102,7 +105,7 @@ export default class Cart extends Component {
   removeItemPressed(item) {
     Alert.alert(
       'Remove '+item.title,
-      'Are you sure you want this item from your cart ?',
+      'Are you sure you want this item from your cart?',
       [
         {text: 'No', onPress: () => console.log('No Pressed'), style: 'cancel'},
         {text: 'Yes', onPress: () => this.removeItem(item)},
@@ -123,7 +126,7 @@ export default class Cart extends Component {
   removeAllPressed() {
     Alert.alert(
       'Empty cart',
-      'Are you sure you want to empty your cart ?',
+      'Are you sure you want to empty your cart?',
       [
         {text: 'No', onPress: () => console.log('No Pressed'), style: 'cancel'},
         {text: 'Yes', onPress: () => this.removeAll()}
