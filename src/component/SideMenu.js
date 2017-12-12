@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { ScrollView, LayoutAnimation, UIManager, Linking } from 'react-native';
+import { ScrollView, LayoutAnimation, UIManager, Linking, AsyncStorage, LocalStorage } from 'react-native';
 import { View, List, ListItem, Body, Left, Right, Icon, Item, Input, Button, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -20,10 +20,137 @@ export default class SideMenu extends Component {
         searchError: false,
         subMenu: false,
         subMenuItems: [],
-        clickedItem: ''
-      };
+        clickedItem: '',
+        loggedIn: false,
+      }
 
       UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+  }
+
+  componentWillMount()
+  {
+    AsyncStorage.getItem('user').then((value) =>
+{
+  alert(value);
+  if (value !== null)
+  {
+menuItems = [
+  {
+    id: 4,
+    title: 'PRODUCTS'
+  }
+];
+
+
+ menusSecondaryItems = [
+{
+  id: 191,
+  title: 'Mao',
+  icon: 'ios-person-add',
+  key: 'signup'
+},
+{
+  id: 192,
+  title: 'Logout',
+  icon: 'ios-person-add',
+  key: 'logout'
+},
+  {
+    id: 276,
+    title: 'Transactions History',
+    icon: 'ios-person-add',
+    key: 'transactionhistory'
+  },
+  {
+    id: 19,
+    title: 'Wish List',
+    icon: 'heart',
+    key: 'wishlist'
+  },
+  {
+    id: 20,
+    key: 'map',
+    title: 'Store Finder',
+    icon: 'ios-pin',
+    key: 'map'
+  },
+  {
+    id: 21,
+    key: 'contact',
+    title: 'Contact Us',
+    icon: 'md-phone-portrait',
+    key: 'contact'
+  },
+  {
+    id: 23,
+    key: 'newsletter',
+    title: 'Newsletter',
+    icon: 'md-paper',
+    key: 'newsletter'
+  },
+  {
+    id: 25,
+    key: 'qrcode',
+    title: 'QR Code',
+    icon: 'md-paper',
+    key: 'qrcode'
+  }
+];
+}
+else if (value === null)
+{
+  menuItems = [
+  {
+    id: 4,
+    title: 'PRODUCTS'
+  }
+];
+
+
+ menusSecondaryItems = [
+{
+  id: 192,
+  title: 'Login',
+  icon: 'ios-person-add',
+  key: 'login'
+},
+  {
+    id: 19,
+    title: 'Wish List',
+    icon: 'heart',
+    key: 'wishlist'
+  },
+  {
+    id: 20,
+    key: 'map',
+    title: 'Store Finder',
+    icon: 'ios-pin',
+    key: 'map'
+  },
+  {
+    id: 21,
+    key: 'contact',
+    title: 'Contact Us',
+    icon: 'md-phone-portrait',
+    key: 'contact'
+  },
+  {
+    id: 23,
+    key: 'newsletter',
+    title: 'Newsletter',
+    icon: 'md-paper',
+    key: 'newsletter'
+  },
+  {
+    id: 25,
+    key: 'qrcode',
+    title: 'QR Code',
+    icon: 'md-paper',
+    key: 'qrcode'
+  }
+];
+}
+});
   }
 
   render() {
@@ -196,65 +323,8 @@ const styles = {
   }
 };
 
-var menuItems = [
-  {
-    id: 4,
-    title: 'PRODUCTS'
-  }
-];
+const menusSecondaryItems = [];
+var menuItems = [];
 
 
-const menusSecondaryItems = [
-  {
-    id: 190,
-    title: 'Login',
-    icon: 'heart',
-    key: 'login'
-  },
-  {
-    id: 519,
-    title: 'Signup',
-    icon: 'ios-person-add',
-    key: 'signup'
-  },
-  {
-    id: 276,
-    title: 'Transactions History',
-    icon: 'ios-person-add',
-    key: 'transactionhistory'
-  },
-  {
-    id: 19,
-    title: 'Wish List',
-    icon: 'heart',
-    key: 'wishlist'
-  },
-  {
-    id: 20,
-    key: 'map',
-    title: 'Store Finder',
-    icon: 'ios-pin',
-    key: 'map'
-  },
-  {
-    id: 21,
-    key: 'contact',
-    title: 'Contact Us',
-    icon: 'md-phone-portrait',
-    key: 'contact'
-  },
-  {
-    id: 23,
-    key: 'newsletter',
-    title: 'Newsletter',
-    icon: 'md-paper',
-    key: 'newsletter'
-  },
-  {
-    id: 25,
-    key: 'qrcode',
-    title: 'QR Code',
-    icon: 'md-paper',
-    key: 'qrcode'
-  }
-];
+

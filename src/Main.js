@@ -26,6 +26,7 @@ import Signup from './page/Signup';
 import Checkout from './page/Checkout';
 import TransactionHistory from './page/TransactionHistory';
 import BarcodeScan from './page/QRCode';
+import Logout from './page/Logout';
 
 export default class Main extends Component {
   componentWillMount = () => {
@@ -52,6 +53,7 @@ export default class Main extends Component {
             <Scene key="checkout" component={Checkout} hideNavBar />
             <Scene key="transactionhistory" component={TransactionHistory} hideNavBar />
 			<Scene key="qrcode" component={BarcodeScan} hideNavBar />
+      <Scene key= "logout" component={Logout} hideNavBar />
           </Scene>
         </Router>
       </Root>

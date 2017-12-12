@@ -28,12 +28,13 @@ export default class BarcodeScan extends Component {
                     ref={cam => this.camera = cam}
                     aspect={Camera.constants.Aspect.fill}
                     >
+                                           <Button style={{marginTop:50}} title='Go to link' onPress={ ()=>{ Linking.openURL(this.state.qrcode)}} />
 					<Text style={{
                             backgroundColor: 'transparent',
 							color: 'red',
 							fontSize: 20
                         }}>{this.state.qrcode}</Text>
-                       <Button title='Go to link' onPress={ ()=>{ Linking.openURL(this.state.qrcode)}} />
+                        <Button style={{marginTop:0}} title='Go back' onPress={ ()=>{ Actions.pop()}} />
                     </Camera>
             </View>
         )

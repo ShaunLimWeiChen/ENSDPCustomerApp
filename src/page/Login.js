@@ -6,6 +6,8 @@
 import React, { Component } from 'react';
 import { Container, View, Left, Right, Button, Icon, Item, Input } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import { Alert, AsyncStorage, LocalStorage } from 'react-native';
+import dismissKeyboard from 'react-native-dismiss-keyboard';
 
 // Our custom files and classes import
 import Colors from '../Colors';
@@ -19,7 +21,8 @@ export default class Login extends Component {
         username: '',
         password: '',
         hasError: false,
-        errorText: ''
+        errorText: '',
+        loggedIn: false
       };
   }
 
@@ -70,13 +73,42 @@ export default class Login extends Component {
   }
 
   login() {
-    /*
-      Remove this code and replace it with your service
-      Username: this.state.username
-      Password: this.state.password
-    */
-    this.setState({hasError: true, errorText: 'Invalid username or password !'});
+  	dismissKeyboard();
+    const {username} = this.state;
+    const {password} = this.state;
+
+    if(username == '' || password == '')
+{
+  this.setState({hasError: true, errorText: 'Email/password cannot be empty!'});
+}
+else
+{
+
+    fetch ('https://shiraishi.ksmz.moe/api/auth/login', {
+    	method: 'POST',
+    	headers: {
+    		'Accept': 'application/json',
+    		'Content-Type': 'application/json',
+    	},
+    	body: JSON.stringify({
+    		email: username,
+    		password: password
+    	})
+    }).then((response) => response.json())
+    .then((responseJson) => {
+    	if(responseJson.message === "Unauthorized")
+    	{
+    		alert("Invalid username or password!");
+    	}
+    	else
+    	{
+    		this.setState({loggedIn:true});
+    		Actions.home();
+    	    AsyncStorage.setItem('user', email);
+    	}
+    }).catch((error) => {
+    	console.error(error);
+    });
   }
-
-
+}
 }
