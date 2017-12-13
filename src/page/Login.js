@@ -103,8 +103,8 @@ else
     	else
     	{
     		this.setState({loggedIn:true});
+        AsyncStorage.setItem('user', username);
     		Actions.home();
-    	    AsyncStorage.setItem('user', email);
     	}
     }).catch((error) => {
     	console.error(error);

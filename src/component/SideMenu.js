@@ -29,10 +29,9 @@ export default class SideMenu extends Component {
 
   componentWillMount()
   {
-    AsyncStorage.getItem('user').then((value) =>
+   AsyncStorage.getItem('user').then((value) =>
 {
-  alert(value);
-  if (value !== null)
+  if (value)
   {
 menuItems = [
   {
@@ -150,8 +149,8 @@ else if (value === null)
   }
 ];
 }
-});
-  }
+  });
+}
 
   render() {
     return(
@@ -160,6 +159,7 @@ else if (value === null)
           </ScrollView>
     );
   }
+
 
   renderMenu() {
     if(!this.state.subMenu) {
@@ -325,6 +325,3 @@ const styles = {
 
 const menusSecondaryItems = [];
 var menuItems = [];
-
-
-
