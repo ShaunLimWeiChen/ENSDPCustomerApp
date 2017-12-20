@@ -77,7 +77,7 @@ export default class Signup extends Component {
             </Item>
             {this.state.hasError?<Text style={{color: "#c0392b", textAlign: 'center', marginTop: 10}}>{this.state.errorText}</Text>:null}
             <View style={{alignItems: 'center'}}>
-              <Button onPress={() => this.signup()} style={{backgroundColor: Colors.navbarBackgroundColor, width: 90, marginTop: 20}}>
+              <Button onPress={() => Actions.signupwebpage()} style={{backgroundColor: Colors.navbarBackgroundColor, width: 90, marginTop: 20}}>
                 <Text style={{color: '#fdfdfd', marginLeft:20}}>Register</Text>
               </Button>
             </View>

@@ -68,6 +68,7 @@ export default class Logout extends Component {
   login() {
   	dismissKeyboard();
     AsyncStorage.removeItem('user');
+    AsyncStorage.clear();
     Actions.home();
 }
 }

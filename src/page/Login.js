@@ -73,7 +73,7 @@ export default class Login extends Component {
   }
 
   login() {
-  	dismissKeyboard();
+    dismissKeyboard();
     const {username} = this.state;
     const {password} = this.state;
 
@@ -85,29 +85,30 @@ else
 {
 
     fetch ('https://shiraishi.ksmz.moe/api/auth/login', {
-    	method: 'POST',
-    	headers: {
-    		'Accept': 'application/json',
-    		'Content-Type': 'application/json',
-    	},
-    	body: JSON.stringify({
-    		email: username,
-    		password: password
-    	})
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: username,
+        password: password
+      })
     }).then((response) => response.json())
     .then((responseJson) => {
-    	if(responseJson.message === "Unauthorized")
-    	{
-    		alert("Invalid username or password!");
-    	}
-    	else
-    	{
-    		this.setState({loggedIn:true});
+      if(responseJson.message === "Unauthorized")
+      {
+        alert("Invalid username or password!");
+      }
+      else
+      {
+        this.setState({loggedIn:true});
         AsyncStorage.setItem('user', username);
-    		Actions.home();
-    	}
+        AsyncStorage.setItem('token', responseJson.access_token)
+        Actions.home();
+      }
     }).catch((error) => {
-    	console.error(error);
+      console.error(error);
     });
   }
 }

@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { ScrollView, LayoutAnimation, UIManager, Linking, AsyncStorage, LocalStorage } from 'react-native';
+import { Alert, ScrollView, LayoutAnimation, UIManager, Linking, AsyncStorage, LocalStorage } from 'react-native';
 import { View, List, ListItem, Body, Left, Right, Icon, Item, Input, Button, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -29,6 +29,11 @@ export default class SideMenu extends Component {
 
   componentWillMount()
   {
+    AsyncStorage.getItem('token')
+.then((value) => {
+  Alert.alert(value)
+});
+
    AsyncStorage.getItem('user').then((value) =>
 {
   if (value)
@@ -46,7 +51,7 @@ menuItems = [
   id: 191,
   title: 'Mao',
   icon: 'ios-person-add',
-  key: 'signup'
+  key: 'signupwebpage'
 },
 {
   id: 192,
@@ -107,6 +112,12 @@ else if (value === null)
 
 
  menusSecondaryItems = [
+ {
+  id: 191,
+  title: 'Register',
+  icon: 'ios-person-add',
+  key: 'signupwebpage'
+},
 {
   id: 192,
   title: 'Login',
