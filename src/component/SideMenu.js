@@ -49,9 +49,9 @@ menuItems = [
  menusSecondaryItems = [
 {
   id: 191,
-  title: 'Mao',
+  title: value,
   icon: 'ios-person-add',
-  key: 'signupwebpage'
+  key: 'changedetails'
 },
 {
   id: 192,
