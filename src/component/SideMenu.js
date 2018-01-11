@@ -29,10 +29,6 @@ export default class SideMenu extends Component {
 
   componentWillMount()
   {
-    AsyncStorage.getItem('token')
-.then((value) => {
-  Alert.alert(value)
-});
 
    AsyncStorage.getItem('user').then((value) =>
 {
@@ -65,6 +61,12 @@ menuItems = [
     icon: 'ios-person-add',
     key: 'transactionhistory'
   },
+  {
+  id: 198,
+  title: 'Change Password',
+  icon: 'ios-person-add',
+  key: 'changepassword'
+},
   {
     id: 19,
     title: 'Wish List',

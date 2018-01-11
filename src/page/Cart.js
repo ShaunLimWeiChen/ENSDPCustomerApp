@@ -74,7 +74,7 @@ export default class Cart extends Component {
     let items = [];
     this.state.cartItems.map((item, i) => {
       items.push(
-      <Card style={{width:341}}>
+      <Card style={{width:340, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}>
         <ListItem
           key={i}
           last={this.state.cartItems.length === i+1}

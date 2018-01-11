@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, AsyncStorage } from 'react-native';
 import { View, Col, CardItem, Body, Button } from 'native-base';
 import { Card } from 'react-native-material-design'
 import { Actions } from 'react-native-router-flux';
@@ -14,10 +14,12 @@ import Colors from '../Colors';
 import Text from './Text';
 
 export default class product extends Component {
+
   render() {
     return(
-        <Card style={{width:325, height: 210}}>
-            <CardItem cardBody>
+
+        <Card style={{width:325, height: 210, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}>
+            <CardItem cardBody style={{flex:1}}>
               <Button transparent style={style.button} onPress={() => this.pressed()}>
                 <Image source={{uri: this.props.product.image}} style={style.image}/>
                 <View style={style.border} />
@@ -32,10 +34,10 @@ export default class product extends Component {
                     <Text
                       style={{fontSize: 17}}
                       numberOfLines={1}
-                    >{this.props.product.title}</Text>
+                    >{this.props.product.name}</Text>
                     <View style={{flex: 1, width: '100%', alignItems: 'center'}}>
                       <View />
-                      <Text style={style.price}>PRICE: {this.props.product.price}</Text>
+                      <Text style={style.price}>PRICE: ${this.props.product.price/100}</Text>
                       <View style={style.line} />
                     </View>
                 </Body>
@@ -54,8 +56,6 @@ const style = {
   button: {flex: 1, height: 150},
   image: {height: 150, width: 340},
   leftMargin: {
-    marginLeft: 7,
-    marginRight: 0,
     marginBottom: 7
   },
   rightMargin: {

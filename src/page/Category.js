@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 import { Container, Content, View, Left, Right, Button, Icon, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import { AsyncStorage, Alert } from 'react-native';
 
 // Our custom files and classes import
 import Colors from '../Colors';
@@ -23,9 +24,38 @@ export default class Category extends Component {
         items: []
       };
   }
-
-  componentWillMount() {
-    var products = require('./product.json');
+    
+    /*
+   componentWillMount() {
+      AsyncStorage.getItem('token')
+.then((value) => {
+         fetch('https://shiraishi.ksmz.moe/api/products?limit=30',
+         {
+          method: 'get',
+          dataType: 'json',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + value
+          }
+         })
+          .then((response) => response.json())
+          .then((responseJson) => {
+            let obj = responseJson;
+            obj.data.map((item, index) => {
+  this.setState({name: item.product.name});
+  this.setState({image: item.product.image});
+  this.setState({price: item.product.price});
+});
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+        });
+      }
+      */
+      componentWillMount() {
+     var products = require('./product.json');
     this.setState({items: products});
   }
 

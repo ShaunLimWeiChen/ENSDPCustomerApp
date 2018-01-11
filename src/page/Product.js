@@ -66,36 +66,14 @@ export default class Product extends Component {
       <Container style={{backgroundColor: '#fdfdfd'}}>
         <Navbar left={left} right={right} title={this.props.product.title} />
         <Content>
-          <Carousel
-              ref={(carousel) => { this._carousel = carousel; }}
-              sliderWidth={Dimensions.get('window').width}
-              itemWidth={Dimensions.get('window').width}
-              onSnapToItem={(index) => this.setState({ activeSlide: index }) }
-              enableSnap={true}
-            >
-                {this.renderImages()}
-            </Carousel>
-            <Pagination
-              dotsLength={this.state.product.images.length}
-              activeDotIndex={this.state.activeSlide}
-              containerStyle={{ backgroundColor: 'transparent',paddingTop: 0, paddingBottom: 0, marginTop: -15 }}
-              dotStyle={{
-                  width: 10,
-                  height: 10,
-                  borderRadius: 5,
-                  marginHorizontal: 2,
-                  backgroundColor: 'rgba(255, 255, 255, 0.92)'
-              }}
-              inactiveDotOpacity={0.4}
-              inactiveDotScale={0.6}
-            />
+           <Image source={{uri: this.props.product.image}} style={style.image}/>
           <View style={{backgroundColor: '#fdfdfd', paddingTop: 10, paddingBottom: 10, paddingLeft: 12, paddingRight: 12, alignItems: 'center'}}>
             <Grid>
               <Col size={3}>
-                <Text style={{fontSize: 18}}>{this.state.product.title}</Text>
+                <Text style={{fontSize: 18}}>{this.props.product.name}</Text>
               </Col>
               <Col>
-                <Text style={{fontSize: 20, fontWeight: 'bold'}}>{this.state.product.price}</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold'}}>${this.props.product.price/100}</Text>
               </Col>
             </Grid>
             <Grid style={{marginTop: 15}}>
@@ -169,7 +147,7 @@ export default class Product extends Component {
               <Card style={{marginTop: 15, padding: 12, width:350, borderWidth: 1, borderRadius: 3, borderColor: 'rgba(149, 165, 166, 0.3)'}}>
                 <Text>
                 Description: {"\n"} 
-                {this.state.product.description}</Text>
+                {this.props.product.description}</Text>
               </Card>
               </View>
           <View style={{marginTop: 15, paddingLeft: 12, paddingRight: 12}}>
@@ -250,7 +228,7 @@ export default class Product extends Component {
   }
 
   addToCart() {
-    var product = this.state.product;
+    var product = this.props.product;
     product['color'] = this.state.selectedColor;
     product['size'] = this.state.selectedSize;
     product['quantity'] = this.state.quantity;
@@ -314,6 +292,39 @@ export default class Product extends Component {
     return false;
   }
 
+}
+
+const style = {
+  button: {flex: 1, height: 150},
+  image: {height: 200, width: 370},
+  leftMargin: {
+    marginBottom: 7
+  },
+  rightMargin: {
+    marginLeft: 0,
+    marginRight: 7,
+    marginBottom: 7
+  },
+  border: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderWidth: 0,
+    borderColor: 'rgba(253, 253, 253, 0.2)'
+  },
+  price: {
+    fontSize: 20,
+    zIndex: 1000,
+    backgroundColor: '#fdfdfd'
+  },
+  line: {
+    height: 1,
+    backgroundColor: '#7f8c8d',
+    position: 'absolute',
+    top: '52%'
+  }
 }
 
 const dummyProduct = {

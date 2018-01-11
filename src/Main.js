@@ -29,6 +29,7 @@ import BarcodeScan from './page/QRCode';
 import Logout from './page/Logout';
 import SignupWeb from './page/SignupWebPage';
 import ChangeDetails from'./page/ChangeDetails';
+import ChangePassword from './page/ChangePassword'
 
 export default class Main extends Component {
   componentWillMount = () => {
@@ -58,6 +59,7 @@ export default class Main extends Component {
       <Scene key= "logout" component={Logout} hideNavBar />
       <Scene key= "signupwebpage" component={SignupWeb} hideNavBar />
       <Scene key= "changedetails" component={ChangeDetails} hideNavBar />
+           <Scene key= "changepassword" component={ChangePassword} hideNavBar />
           </Scene>
         </Router>
       </Root>
