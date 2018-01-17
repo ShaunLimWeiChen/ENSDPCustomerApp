@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { Image, AsyncStorage, Alert } from 'react-native';
+import { Image, AsyncStorage } from 'react-native';
 import { View, Col, CardItem, Body, Button } from 'native-base';
 import { Card } from 'react-native-material-design'
 import { Actions } from 'react-native-router-flux';
@@ -14,55 +14,14 @@ import Colors from '../Colors';
 import Text from './Text';
 
 export default class product extends Component {
- constructor(props) {
-      super(props);
-      this.state = {
-           items: [],
-           name: [],
-           image: '',
-           price: []
-      };
-    }
 
-
-componentWillMount()
-{
-        AsyncStorage.getItem('token')
-.then((value) => {
-         fetch('https://shiraishi.ksmz.moe/api/products?limit=30',
-         {
-          method: 'get',
-          dataType: 'json',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + value
-          }
-         })
-          .then((response) => response.json())
-          .then((responseJson) => {
-            //let obj = responseJson;
-            //obj.data.map((item, index) => {
- //this.setState({name: JSON.stringify(item.product.name)});
- //this.setState({image: JSON.stringify(item.product.image)});
- //this.setState({price: JSON.stringify(item.product.price)});
- //Alert.alert(JSON.stringify(item.product));
-});
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-    //  });
-
-}
-      
-      
   render() {
     return(
+
         <Card style={{width:325, height: 210, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}>
             <CardItem cardBody style={{flex:1}}>
               <Button transparent style={style.button} onPress={() => this.pressed()}>
-                <Image source={{uri:this.props.product.image}} style={style.image}/>
+                <Image source={{uri: this.props.product.image}} style={style.image}/>
                 <View style={style.border} />
               </Button>
             </CardItem>

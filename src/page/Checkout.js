@@ -105,7 +105,7 @@ export default class Checkout extends Component {
                 <Text style={{fontSize: 18, fontStyle: 'italic'}}>Total</Text>
               </Col>
               <Col>
-                <Text style={{textAlign: 'right', fontSize: 18, fontWeight: 'bold'}}>{this.state.total+"$"}</Text>
+                <Text style={{textAlign: 'right', fontSize: 18, fontWeight: 'bold'}}>${this.state.total/100}</Text>
               </Col>
             </Grid>
           </View>
@@ -130,7 +130,7 @@ export default class Checkout extends Component {
           <View style={{marginTop: 10, marginBottom: 10, paddingBottom: 7}}>
             <Button onPress={() => this.checkout()} style={{backgroundColor: Colors.navbarBackgroundColor}} block iconLeft>
               <Icon name='ios-card' />
-              <Text style={{color: '#fdfdfd'}}>Proceed to payement</Text>
+              <Text style={{color: '#fdfdfd'}}>Proceed to payment</Text>
             </Button>
           </View>
         </Content>
@@ -147,15 +147,14 @@ export default class Checkout extends Component {
           style={{marginLeft: 0}}
         >
           <Body style={{paddingLeft: 10}}>
-            <Text style={{fontSize: 18}}>
+            <Text style={{fontSize: 15}}>
               {item.quantity > 1 ? item.quantity+"x " : null}
-              {item.title}
+              {item.name}
             </Text>
-            <Text style={{fontSize: 14 ,fontStyle: 'italic'}}>Color: {item.color}</Text>
-            <Text style={{fontSize: 14 ,fontStyle: 'italic'}}>Size: {item.size}</Text>
+            
           </Body>
           <Right>
-            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>{item.price}</Text>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${item.price/100}</Text>
           </Right>
         </ListItem>
       );
@@ -173,7 +172,7 @@ export default class Checkout extends Component {
 const styles = {
   invoice: {
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 10
   },
   line: {
     width: '100%',

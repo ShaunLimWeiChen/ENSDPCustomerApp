@@ -69,9 +69,9 @@ export default class WishList extends Component {
           <Thumbnail square style={{width: 110, height: 90}} source={{ uri: item.image }} />
           <Body style={{paddingLeft: 10}}>
             <Text style={{fontSize: 18}}>
-              {item.title}
+              {item.name}
             </Text>
-            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>{item.price}</Text>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${item.price/100}</Text>
             <Text style={{fontSize: 14 ,fontStyle: 'italic'}}>{item.category}</Text>
           </Body>
           <Right>

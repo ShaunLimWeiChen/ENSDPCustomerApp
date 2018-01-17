@@ -84,11 +84,9 @@ export default class Cart extends Component {
           <Body style={{paddingLeft: 10}}>
             <Text style={{fontSize: 18}}>
               {item.quantity > 1 ? item.quantity+"x " : null}
-              {item.title}
+              {item.name}
             </Text>
-            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>{item.price}</Text>
-            <Text style={{fontSize: 14 ,fontStyle: 'italic'}}>Color: {item.color}</Text>
-            <Text style={{fontSize: 14 ,fontStyle: 'italic'}}>Size: {item.size}</Text>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${(item.price/100) * (item.quantity)}</Text>
           </Body>
           <Right>
             <Button style={{marginLeft: -25}} transparent onPress={() => this.removeItemPressed(item)}>

@@ -47,7 +47,7 @@ menuItems = [
   id: 191,
   title: value,
   icon: 'ios-person-add',
-  key: 'changedetails'
+  key: 'profiledetails'
 },
 {
   id: 192,
@@ -66,6 +66,12 @@ menuItems = [
   title: 'Change Password',
   icon: 'ios-person-add',
   key: 'changepassword'
+},
+{
+  id: 199,
+  title: 'Credit Card Input',
+  icon: 'ios-person-add',
+  key: 'changedetails'
 },
   {
     id: 19,

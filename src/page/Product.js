@@ -76,43 +76,8 @@ export default class Product extends Component {
                 <Text style={{fontSize: 20, fontWeight: 'bold'}}>${this.props.product.price/100}</Text>
               </Col>
             </Grid>
-            <Grid style={{marginTop: 15}}>
-              <Col>
-                <View style={{flex: 1, justifyContent: 'center'}}>
-                  <Text>Color:</Text>
-                </View>
-              </Col>
-              <Col size={3}>
-                <Picker
-                  mode="dropdown"
-                  placeholder="Select a color"
-                  note={true}
-                  selectedValue={this.state.selectedColor}
-                  onValueChange={(color) => this.setState({selectedColor: color})}
-                >
-                  {this.renderColors()}
-                </Picker>
-              </Col>
-            </Grid>
-            <Grid>
-              <Col>
-                <View style={{flex: 1, justifyContent: 'center'}}>
-                  <Text>Size:</Text>
-                </View>
-              </Col>
-              <Col size={3}>
-                <Picker
-                  mode="dropdown"
-                  placeholder="Select a size"
-                  note={true}
-                  selectedValue={this.state.selectedSize}
-                  onValueChange={(size) => this.setState({selectedSize: size})}
-                >
-                  {this.renderSize()}
-                </Picker>
-              </Col>
-            </Grid>
-            <Grid>
+
+            <Grid style={{marginTop:15}}>
               <Col>
                 <View style={{flex: 1, justifyContent: 'center'}}>
                   <Text>Quantity:</Text>
@@ -229,8 +194,8 @@ export default class Product extends Component {
 
   addToCart() {
     var product = this.props.product;
-    product['color'] = this.state.selectedColor;
-    product['size'] = this.state.selectedSize;
+    //product['color'] = this.state.selectedColor;
+    //product['size'] = this.state.selectedSize;
     product['quantity'] = this.state.quantity;
     AsyncStorage.getItem("CART", (err, res) => {
       if(!res) AsyncStorage.setItem("CART",JSON.stringify([product]));
@@ -250,7 +215,7 @@ export default class Product extends Component {
   }
 
   addToWishlist() {
-    var product = this.state.product;
+    var product = this.props.product;
     var success = true;
     AsyncStorage.getItem("WISHLIST", (err, res) => {
       if(!res) AsyncStorage.setItem("WISHLIST",JSON.stringify([product]));
@@ -266,7 +231,7 @@ export default class Product extends Component {
       }
       if(success) {
         Toast.show({
-          text: 'Product added to your wishlist !',
+          text: 'Product added to your wishlist!',
           position: 'bottom',
           type: 'success',
           buttonText: 'Dismiss',
@@ -275,7 +240,7 @@ export default class Product extends Component {
       }
       else {
         Toast.show({
-          text: 'This product already exist in your wishlist !',
+          text: 'This product already exist in your wishlist!',
           position: 'bottom',
           type: 'danger',
           buttonText: 'Dismiss',
