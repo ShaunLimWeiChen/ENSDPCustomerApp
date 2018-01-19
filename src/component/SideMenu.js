@@ -95,10 +95,10 @@ menuItems = [
   },
   {
     id: 23,
-    key: 'newsletter',
-    title: 'Newsletter',
+    key: 'messages',
+    title: 'Messages',
     icon: 'md-paper',
-    key: 'newsletter'
+    key: 'messages'
   },
   {
     id: 25,
@@ -154,10 +154,10 @@ else if (value === null)
   },
   {
     id: 23,
-    key: 'newsletter',
-    title: 'Newsletter',
+    key: 'messages',
+    title: 'Messages',
     icon: 'md-paper',
-    key: 'newsletter'
+    key: 'messages'
   },
   {
     id: 25,

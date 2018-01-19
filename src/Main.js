@@ -16,7 +16,7 @@ import Search from './page/Search';
 import Cart from './page/Cart';
 import WishList from './page/WishList';
 import Map from './page/Map';
-import Newsletter from './page/Newsletter';
+import Messages from './page/Messages';
 import Contact from './page/Contact';
 import Category from './page/Category';
 import Product from './page/Product';
@@ -48,7 +48,7 @@ export default class Main extends Component {
             <Scene key="wishlist" component={WishList} modal hideNavBar />
             <Scene key="map" component={Map} modal hideNavBar />
             <Scene key="contact" component={Contact} modal hideNavBar />
-            <Scene key="newsletter" component={Newsletter} modal hideNavBar />
+            <Scene key="messages" component={Messages} modal hideNavBar />
             <Scene key="category" component={Category} hideNavBar />
             <Scene key="product" component={Product} hideNavBar />
             <Scene key="imageGallery" component={ImageGallery} modal hideNavBar />
@@ -56,10 +56,10 @@ export default class Main extends Component {
             <Scene key="signup" component={Signup} hideNavBar />
             <Scene key="checkout" component={Checkout} hideNavBar />
             <Scene key="transactionhistory" component={TransactionHistory} hideNavBar />
-			<Scene key="qrcode" component={BarcodeScan} hideNavBar />
-      <Scene key= "logout" component={Logout} hideNavBar />
-      <Scene key= "signupwebpage" component={SignupWeb} hideNavBar />
-      <Scene key= "changedetails" component={ChangeDetails} hideNavBar />
+      			<Scene key="qrcode" component={BarcodeScan} hideNavBar />
+            <Scene key= "logout" component={Logout} hideNavBar />
+            <Scene key= "signupwebpage" component={SignupWeb} hideNavBar />
+            <Scene key= "changedetails" component={ChangeDetails} hideNavBar />
            <Scene key= "changepassword" component={ChangePassword} hideNavBar />
            <Scene key="profiledetails" component={ProfileDetails} hideNavBar />
           </Scene>
