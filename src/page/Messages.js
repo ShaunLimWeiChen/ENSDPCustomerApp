@@ -4,6 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
+import AsyncStorage from 'react-native';
 import { Container, View, Icon, Left, Button, Item, Input } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -24,6 +25,31 @@ export default class Newsletter extends Component {
 
 
   componentWillMount() {
+      AsyncStorage.getItem('token')
+.then((value) => {
+         fetch('https://shiraishi.ksmz.moe/api/chat',
+         {
+          method: 'get',
+          dataType: 'json',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + value
+          }
+         })
+          .then((response) => response.json())
+          .then((responseJson) => {
+            //let obj = responseJson;
+            //obj.data.map((item, index) => {
+ //this.setState({name: JSON.stringify(item.product.name)});
+ //this.setState({image: JSON.stringify(item.product.image)});
+ //this.setState({price: JSON.stringify(item.product.price)});
+ //Alert.alert(JSON.stringify(item.product));
+});
+          })
+          .catch((error) => {
+            console.error(error);
+          });
     this.setState({
       messages: [
         {

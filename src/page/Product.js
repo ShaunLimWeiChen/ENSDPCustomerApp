@@ -73,7 +73,7 @@ export default class Product extends Component {
                 <Text style={{fontSize: 18}}>{this.props.product.name}</Text>
               </Col>
               <Col>
-                <Text style={{fontSize: 20, fontWeight: 'bold'}}>${this.props.product.price/100}</Text>
+                <Text style={{fontSize: 20, fontWeight: 'bold'}}>${(this.props.product.price/100).toFixed(2)}</Text>
               </Col>
             </Grid>
 
@@ -92,7 +92,7 @@ export default class Product extends Component {
                     <Text style={{fontSize: 18}}>{this.state.quantity}</Text>
                   </View>
                   <Button style={{backgroundColor: Colors.navbarBackgroundColor}} onPress={() => this.setState({quantity: this.state.quantity+1})}>
-                    <Icon name='ios-heart' />
+                    <Icon name='add' />
                   </Button>
                 </View>
               </Col>
@@ -111,12 +111,12 @@ export default class Product extends Component {
             </Grid>
               <Card style={{marginTop: 15, padding: 12, width:350, borderWidth: 1, borderRadius: 3, borderColor: 'rgba(149, 165, 166, 0.3)'}}>
                 <Text>
-                Description: {"\n"} 
+                DESCRIPTION {"\n"} 
                 {this.props.product.description}</Text>
               </Card>
               </View>
           <View style={{marginTop: 15, paddingLeft: 12, paddingRight: 12}}>
-            <Text style={{marginBottom: 5}}>Similar items</Text>
+            <Text style={{marginBottom: 5}}>Other items</Text>
             <View style={{width: 50, height: 1, backgroundColor: 'rgba(44, 62, 80, 0.5)', marginLeft: 7, marginBottom: 10}} />
             {this.renderSimilairs()}
           </View>
@@ -307,9 +307,244 @@ const dummyProduct = {
   colors: ['Red', 'Blue', 'Black'],
   sizes: ['S', 'M', 'L', 'XL', 'XXL'],
   category: 'MAN',
-  similarItems: [
-    {id: 10, title: 'V NECK T-SHIRT', price: '29$', image: 'http://res.cloudinary.com/atf19/image/upload/c_crop,g_face,h_250,x_248/v1500465308/fashion-men-s-individuality-black-and-white-157675_wnctss.jpg'},
-    {id: 11, title: 'V NECK T-SHIRT', price: '29$', image: 'http://res.cloudinary.com/atf19/image/upload/c_crop,h_250/v1500465308/pexels-photo-179909_ddlsmt.jpg'},
-    {id: 12, title: 'V NECK T-SHIRT', price: '29$', image: 'http://res.cloudinary.com/atf19/image/upload/c_crop,h_250/v1500465308/pexels-photo-179909_ddlsmt.jpg'}
-  ]
+  similarItems: [{
+              "id": 1,
+                "name": "Schroeder-Willms",
+                "description": "Sit sint aut blanditiis facere cum praesentium itaque commodi. Consequatur tenetur tenetur consequuntur. Porro debitis aut natus delectus pariatur dignissimos beatae.",
+                "price": 32004,
+                "image": "https://picsum.photos/400?image=390"
+            },
+            {
+                                "id": 2,
+                "name": "Langworth, Abernathy and Casper",
+                "description": "Aut hic neque iure. Sunt placeat aut quidem nemo velit ut repellat. Quis incidunt in omnis sunt.",
+                "price": 10964,
+                "image": "https://picsum.photos/400?image=0"
+
+            },
+            {
+                               "id": 3,
+                "name": "Buckridge-Konopelski",
+                "description": "Modi eum vel eos quibusdam ad tempore. Fugit quia sapiente quo perspiciatis tempora. Enim deserunt numquam temporibus exercitationem cum hic. Voluptatem debitis sint ea soluta fuga aperiam.",
+                "price": 36205,
+                "image": "https://picsum.photos/400?image=241"
+
+            },
+            {
+              "id": 4,
+                "name": "Wisozk-Denesik",
+                "description": "Odit voluptates enim eligendi ratione dicta possimus. Unde quidem rerum voluptatibus ad aut. Atque molestias non aut ea saepe sit.",
+                "price": 29770,
+                "image": "https://picsum.photos/400?image=329"
+
+            },
+            {
+                               "id": 5,
+                "name": "Predovic-Skiles",
+                "description": "A impedit voluptas minima qui explicabo. Aut dolor eos fugit aspernatur unde dolorem quia. Ducimus corrupti minima cum natus nulla et itaque. Ut minima vel quod nisi.",
+                "price": 67144,
+                "image": "https://picsum.photos/400?image=287"
+
+            },
+            {
+                              "id": 6,
+                "name": "Hoppe-Trantow",
+                "description": "Quia et laudantium quia ratione. Voluptas numquam ex et voluptatem quos. Aut libero quia in a dolorem. Sit culpa hic id in.",
+                "price": 68983,
+                "image": "https://picsum.photos/400?image=366"
+
+            },
+            {
+                              "id": 7,
+                "name": "Swift Inc",
+                "description": "Dolores saepe laboriosam aspernatur atque numquam iste. Pariatur amet assumenda expedita quae. Eius qui ratione quod corrupti. Ut similique facilis soluta qui qui. Molestiae iure cumque sit non.",
+                "price": 91624,
+                "image": "https://picsum.photos/400?image=159"
+
+            },
+            {
+                                "id": 8,
+                "name": "Stark-Feil",
+                "description": "A aut fugit porro quas. Nesciunt quod earum quae a placeat quidem voluptatem. Voluptate quaerat alias rerum enim excepturi. Quae non voluptatem ipsam enim aliquid exercitationem.",
+                "price": 65892,
+                "image": "https://picsum.photos/400?image=107"
+
+            },
+            {
+                               "id": 9,
+                "name": "Sipes, Skiles and Nitzsche",
+                "description": "Dolores libero tenetur similique qui aliquid et dolores dolorem. Voluptas perferendis ipsa sapiente sapiente numquam minus. Rerum et laborum doloremque ab nostrum.",
+                "price": 33567,
+                "image": "https://picsum.photos/400?image=233"
+
+            },
+            {
+                               "id": 10,
+                "name": "Boyle, Breitenberg and Windler",
+                "description": "Hic dolor eligendi odio qui velit quasi dolor debitis. Dolores delectus cum delectus voluptatem a explicabo. Exercitationem voluptatem ea et recusandae dicta modi necessitatibus. Quibusdam veritatis nihil sed vitae in vel autem saepe.",
+                "price": 94803,
+                "image": "https://picsum.photos/400?image=390"
+
+            },
+            {
+                               "id": 11,
+                "name": "Keebler-Aufderhar",
+                "description": "Tempora ducimus reiciendis alias. Sit aut blanditiis odit est. Et incidunt facilis consequuntur velit laudantium. Non facilis aut atque occaecati beatae.",
+                "price": 80098,
+                "image": "https://picsum.photos/400?image=289"
+
+            },
+            {
+               "id": 12,
+                "name": "Labadie Group",
+                "description": "Neque minima impedit ut voluptatibus odit enim commodi. Modi omnis rerum quae autem asperiores. Sint est est a blanditiis.",
+                "price": 70715,
+                "image": "https://picsum.photos/400?image=210"
+
+            },
+            {
+                 "id": 13,
+                "name": "Raynor, Abbott and Reynolds",
+                "description": "Ipsa similique perspiciatis vel qui consequatur nostrum quis quaerat. Molestias quaerat vitae velit culpa sit nihil rerum porro. Rerum accusamus similique eos odio id et.",
+                "price": 3033,
+                "image": "https://picsum.photos/400?image=385"
+
+            },
+            {
+                              "id": 14,
+                "name": "Satterfield, Conroy and Hilll",
+                "description": "Iusto dolores assumenda et est sint sint. Aliquid eum deleniti quidem ad. Quas nemo voluptas tenetur alias fugit modi. Sed fugit est eligendi ea doloribus culpa dolorum. Accusantium nemo deleniti provident aut velit voluptatibus soluta aperiam.",
+                "price": 33228,
+                "image": "https://picsum.photos/400?image=224"
+
+            },
+            {
+                              "id": 15,
+                "name": "Champlin-White",
+                "description": "Dolorem est et vel dolorem incidunt qui veritatis. Qui suscipit debitis suscipit sunt ut in. Quia sit qui ad qui aut cupiditate.",
+                "price": 32962,
+                "image": "https://picsum.photos/400?image=283"
+
+            },
+            {
+                               "id": 16,
+                "name": "Shanahan-Carroll",
+                "description": "Placeat eos odio necessitatibus asperiores. Repellendus dolorem dolor rerum eum et.",
+                "price": 23896,
+                "image": "https://picsum.photos/400?image=227"
+
+            },
+            {
+                              "id": 17,
+                "name": "Pouros Inc",
+                "description": "Nesciunt voluptates ad nemo omnis esse dolore tenetur. Amet dolorem et non placeat odit ea est. Quis non ad molestiae quam aut voluptates odit.",
+                "price": 50120,
+                "image": "https://picsum.photos/400?image=109"
+
+            },
+            {
+                               "id": 18,
+                "name": "Wuckert PLC",
+                "description": "Ullam dolores veniam molestiae ut deleniti voluptatem quo voluptate. Et ab quis sit et sint aliquid qui. In hic nam voluptas alias aliquam quibusdam nam.",
+                "price": 14258,
+                "image": "https://picsum.photos/400?image=222"
+
+            },
+            {
+                              "id": 19,
+                "name": "Mraz, Altenwerth and Hessel",
+                "description": "Quam laborum blanditiis voluptas quas aut perspiciatis explicabo. Necessitatibus doloribus laboriosam distinctio neque recusandae velit officiis. Ad sunt aut omnis inventore nemo est omnis excepturi.",
+                "price": 27308,
+                "image": "https://picsum.photos/400?image=342"
+
+            },
+            {
+                              "id": 20,
+                "name": "Sauer, Turner and Abshire",
+                "description": "Ullam ut similique amet nostrum molestiae temporibus. Occaecati tempore ut laborum earum. Inventore natus non rerum ea facere.",
+                "price": 51574,
+                "image": "https://picsum.photos/400?image=51"
+
+            },
+            {
+                                    "id": 21,
+                "name": "Ebert Inc",
+                "description": "Pariatur sed accusantium voluptatem maiores aliquid. Autem excepturi incidunt modi adipisci asperiores.",
+                "price": 90112,
+                "image": "https://picsum.photos/400?image=320"
+
+            },
+            {
+                               "id": 22,
+                "name": "Ferry, Koch and Crist",
+                "description": "Ut quia facere aut nam. Sed repellendus sed voluptas optio. Itaque debitis possimus reiciendis error aut. Et quo illum sed nam quas vero aliquam expedita. Dolorem rerum officiis est cupiditate.",
+                "price": 30505,
+                "image": "https://picsum.photos/400?image=62"
+
+            },
+            {
+                              "id": 23,
+                "name": "Funk-Koelpin",
+                "description": "Quisquam et omnis debitis et. Rem nihil rem omnis velit enim ducimus et. Exercitationem rerum id officia eveniet veniam aut veniam. A voluptatibus sint unde odit quia.",
+                "price": 96168,
+                "image": "https://picsum.photos/400?image=227"
+
+            },
+            {
+               "id": 24,
+                "name": "Will, Pacocha and Schiller",
+                "description": "Eum officia ut inventore quae. Odio deleniti ut officiis id. Et debitis quam reprehenderit animi ratione facere consequatur.",
+                "price": 5110,
+                "image": "https://picsum.photos/400?image=156"
+
+            },
+            {
+                               "id": 25,
+                "name": "Kihn and Sons",
+                "description": "Minus et et architecto. Commodi sed consectetur eum at fuga ducimus. Accusamus reprehenderit tenetur sint. Quasi aut ea ut repudiandae ab delectus porro.",
+                "price": 28159,
+                "image": "https://picsum.photos/400?image=90"
+
+            },
+            {
+                                "id": 26,
+                "name": "Buckridge Ltd",
+                "description": "Velit animi aut omnis minima voluptas voluptatibus. Impedit deserunt commodi in tempora autem ad ut. Adipisci id ab quia quibusdam enim qui quo. Asperiores mollitia voluptatem atque quibusdam ex.",
+                "price": 16825,
+                "image": "https://picsum.photos/400?image=310"
+
+            },
+            {
+                               "id": 27,
+                "name": "Bosco and Sons",
+                "description": "Eum est molestias reprehenderit voluptatum. Eius nihil aut rerum et distinctio qui.",
+                "price": 82724,
+                "image": "https://picsum.photos/400?image=99"
+
+            },
+            {
+                "id": 28,
+                "name": "Fisher, Upton and Wehner",
+                "description": "Ea odio dolor excepturi optio maiores. Neque magni omnis iusto deserunt quae architecto beatae temporibus. Praesentium ab ducimus qui eos et est. Quia alias eius iste quis.",
+                "price": 19108,
+                "image": "https://picsum.photos/400?image=36"
+
+            },
+            {
+                               "id": 29,
+                "name": "D'Amore, Steuber and Crooks",
+                "description": "Facilis ut non ea. Dolore ipsam autem doloribus quo dolore. Eligendi non maiores eveniet provident repellat quia quas.",
+                "price": 3197,
+                "image": "https://picsum.photos/400?image=383"
+
+            },
+            {
+                            "id": 30,
+                "name": "Hessel, Gutkowski and Mayert",
+                "description": "Eius modi aut exercitationem ullam corrupti atque in. Possimus assumenda quos facilis molestiae rerum ut omnis assumenda. Et iusto iusto non esse qui corporis impedit.",
+                "price": 40460,
+                "image": "https://picsum.photos/400?image=60"
+
+            }
+      ]
 };

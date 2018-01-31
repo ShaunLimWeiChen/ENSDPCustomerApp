@@ -86,7 +86,7 @@ export default class Cart extends Component {
               {item.quantity > 1 ? item.quantity+"x " : null}
               {item.name}
             </Text>
-            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${(item.price/100) * (item.quantity)}</Text>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${((item.price/100) * (item.quantity)).toFixed(2)}</Text>
           </Body>
           <Right>
             <Button style={{marginLeft: -25}} transparent onPress={() => this.removeItemPressed(item)}>
@@ -102,7 +102,7 @@ export default class Cart extends Component {
 
   removeItemPressed(item) {
     Alert.alert(
-      'Remove '+item.title,
+      'Remove ' +item.quantity + 'x ' +item.name,
       'Are you sure you want this item from your cart?',
       [
         {text: 'No', onPress: () => console.log('No Pressed'), style: 'cancel'},

@@ -93,7 +93,7 @@ menuItems = [
     icon: 'md-phone-portrait',
     key: 'contact'
   },
-  {
+    {
     id: 23,
     key: 'messages',
     title: 'Messages',
@@ -154,10 +154,10 @@ else if (value === null)
   },
   {
     id: 23,
-    key: 'messages',
-    title: 'Messages',
+    key: 'newsletter',
+    title: 'Newsletter',
     icon: 'md-paper',
-    key: 'messages'
+    key: 'newsletter'
   },
   {
     id: 25,

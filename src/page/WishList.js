@@ -71,7 +71,7 @@ export default class WishList extends Component {
             <Text style={{fontSize: 18}}>
               {item.name}
             </Text>
-            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${item.price/100}</Text>
+            <Text style={{fontSize: 16, fontWeight: 'bold', marginBottom: 10}}>${(item.price/100).toFixed(2)}</Text>
             <Text style={{fontSize: 14 ,fontStyle: 'italic'}}>{item.category}</Text>
           </Body>
           <Right>
@@ -92,7 +92,7 @@ export default class WishList extends Component {
 
   removeItemPressed(item) {
     Alert.alert(
-      'Remove '+item.title,
+      'Remove '+item.name,
       'Are you sure you want this item from your wishlist?',
       [
         {text: 'No', onPress: () => console.log('No Pressed'), style: 'cancel'},
