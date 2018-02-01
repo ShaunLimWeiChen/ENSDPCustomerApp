@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import AsyncStorage from 'react-native';
+import { AsyncStorage } from 'react-native';
 import { Container, View, Icon, Left, Button, Item, Input } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 

@@ -22,6 +22,7 @@ export default class SideMenu extends Component {
         subMenuItems: [],
         clickedItem: '',
         loggedIn: false,
+        name: ''
       }
 
       UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -29,6 +30,12 @@ export default class SideMenu extends Component {
 
   componentWillMount()
   {
+
+    AsyncStorage.getItem('user').then((value) =>
+{
+  this.setState({name: value});
+}
+);
 
    AsyncStorage.getItem('role').then((value) =>
 {
@@ -45,7 +52,7 @@ menuItems = [
  menusSecondaryItems = [
 {
   id: 191,
-  title: "shaun@s.s",
+  title: this.state.name,
   icon: 'ios-person-add',
   key: 'profiledetails'
 },
@@ -122,7 +129,7 @@ menuItems = [
  menusSecondaryItems = [
 {
   id: 191,
-  title: "thomas@t.t",
+  title: this.state.name,
   icon: 'ios-person-add',
   key: 'profiledetails'
 },
