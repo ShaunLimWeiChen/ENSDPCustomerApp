@@ -78,7 +78,7 @@ componentWillMount()
                     >{this.props.product.name}</Text>
                     <View style={{flex: 1, width: '100%', alignItems: 'center'}}>
                       <View />
-                      <Text style={style.price}>PRICE: ${(this.props.product.price/100).ToFixed(2)}</Text>
+                      <Text style={style.price}>PRICE: ${(this.props.product.price/100).toFixed(2)}</Text>
                       <View style={style.line} />
                     </View>
                 </Body>

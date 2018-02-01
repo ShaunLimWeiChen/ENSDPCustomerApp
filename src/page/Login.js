@@ -102,6 +102,14 @@ else
       }
       else
       {
+        if (username == 'shaun@s.s')
+        {
+          AsyncStorage.setItem('role', "Customer");
+        }
+        else if (username == "thomas@t.t")
+        {
+          AsyncStorage.setItem('role', "Merchant");
+        }
         this.setState({loggedIn:true});
         AsyncStorage.setItem('user', username);
         AsyncStorage.setItem('token', responseJson.access_token)

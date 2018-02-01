@@ -30,9 +30,9 @@ export default class SideMenu extends Component {
   componentWillMount()
   {
 
-   AsyncStorage.getItem('user').then((value) =>
+   AsyncStorage.getItem('role').then((value) =>
 {
-  if (value)
+  if (value == "Customer")
   {
 menuItems = [
   {
@@ -45,7 +45,7 @@ menuItems = [
  menusSecondaryItems = [
 {
   id: 191,
-  title: value,
+  title: "shaun@s.s",
   icon: 'ios-person-add',
   key: 'profiledetails'
 },
@@ -79,6 +79,77 @@ menuItems = [
     icon: 'heart',
     key: 'wishlist'
   },
+  {
+    id: 20,
+    key: 'map',
+    title: 'Store Finder',
+    icon: 'ios-pin',
+    key: 'map'
+  },
+  {
+    id: 21,
+    key: 'contact',
+    title: 'Contact Us',
+    icon: 'md-phone-portrait',
+    key: 'contact'
+  },
+    {
+    id: 23,
+    key: 'messages',
+    title: 'Messages',
+    icon: 'md-paper',
+    key: 'messages'
+  },
+  {
+    id: 25,
+    key: 'qrcode',
+    title: 'QR Code',
+    icon: 'md-paper',
+    key: 'qrcode'
+  }
+];
+}
+else if (value == "Merchant")
+ {
+menuItems = [
+  {
+    id: 4,
+    title: 'PRODUCTS'
+  }
+];
+
+
+ menusSecondaryItems = [
+{
+  id: 191,
+  title: "thomas@t.t",
+  icon: 'ios-person-add',
+  key: 'profiledetails'
+},
+{
+  id: 192,
+  title: 'Logout',
+  icon: 'ios-person-add',
+  key: 'logout'
+},
+  {
+    id: 276,
+    title: 'Sales History',
+    icon: 'ios-person-add',
+    key: 'transactionhistory'
+  },
+  {
+  id: 198,
+  title: 'Change Password',
+  icon: 'ios-person-add',
+  key: 'changepassword'
+},
+{
+  id: 199,
+  title: 'Manage Products',
+  icon: 'ios-person-add',
+  key: 'changedetails'
+},
   {
     id: 20,
     key: 'map',
