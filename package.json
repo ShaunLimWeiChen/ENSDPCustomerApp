@@ -12,7 +12,6 @@
     "react-native": "0.46.2",
     "react-native-camera": "^0.6",
     "react-native-credit-card-input": "^0.4.1",
-    "react-native-custom-tabs": "^0.1.7",
     "react-native-dismiss-keyboard": "^1.0.0",
     "react-native-drawer": "^2.3.0",
     "react-native-flexbox-grid": "^0.3.2",
