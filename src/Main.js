@@ -24,13 +24,14 @@ import ImageGallery from './page/ImageGallery';
 import Login from './page/Login';
 import Signup from './page/Signup';
 import Checkout from './page/Checkout';
-import TransactionHistory from './page/TransactionHistory';
 import BarcodeScan from './page/QRCode';
 import Logout from './page/Logout';
 import SignupWeb from './page/SignupWebPage';
 import ChangeDetails from'./page/ChangeDetails';
 import ChangePassword from './page/ChangePassword';
-import ProfileDetails from './page/ProfileDetails'
+import ProfileDetails from './page/ProfileDetails';
+import TransactionHistory from './component/TransactionHistory';
+import Chats from './page/Chats';
 
 export default class Main extends Component {
   componentWillMount = () => {
@@ -62,6 +63,7 @@ export default class Main extends Component {
             <Scene key= "changedetails" component={ChangeDetails} hideNavBar />
            <Scene key= "changepassword" component={ChangePassword} hideNavBar />
            <Scene key="profiledetails" component={ProfileDetails} hideNavBar />
+           <Scene key="conversations" component={Chats} hideNavBar />
           </Scene>
         </Router>
       </Root>

@@ -4,8 +4,9 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { Image } from 'react-native';
-import { View, Col, Card, CardItem, Body, Button } from 'native-base';
+import { Image, AsyncStorage, Alert } from 'react-native';
+import { View, Col, CardItem, Body, Button } from 'native-base';
+import { Card } from 'react-native-material-design'
 import { Actions } from 'react-native-router-flux';
 
 // Our custom files and classes import
@@ -13,25 +14,59 @@ import Colors from '../Colors';
 import Text from './Text';
 
 export default class TransactionHistory extends Component {
-constructor(props) {
+ constructor(props) {
       super(props);
       this.state = {
-        transactions: []
+          orders: [],
+          qty: []
       };
-  }
+    }
 
-  componentWillMount() {
-    var products = require('./product.json');
-    this.setState({transactions: transhistory});
-  }
 
+componentWillMount()
+{
+        AsyncStorage.getItem('token')
+.then((value) => {
+         fetch('https://shiraishi.ksmz.moe/api/orders/',
+         {
+          method: 'get',
+          dataType: 'json',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + value
+          }
+         })
+          .then((response) => response.json())
+          .then((responseJson) => {
+            let obj = responseJson;
+            obj.data.map((data) => {
+            	this.setState({qty: data});
+            	data.data.map(datas=>
+            	{
+            		this.setState({orders: product.data.product});
+            	})
+ //this.setState({name: JSON.stringify(item.product.name)});
+ //this.setState({orders: JSON.stringify(item.transactions.data.data.product)});
+  //this.setState({qty: JSON.stringify(item.transactions.data)});
+ //this.setState({price: JSON.stringify(item.product.price)});
+ //Alert.alert(JSON.stringify(item.product));
+});
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      });
+
+}
+      
+      
   render() {
     return(
-      <Col style={this.props.isRight ? style.leftMargin : style.rightMargin}>
-        <Card transparent>
-            <CardItem cardBody>
+        <Card style={{width:325, height: 210, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}>
+            <CardItem cardBody style={{flex:1}}>
               <Button transparent style={style.button} onPress={() => this.pressed()}>
-                <Image source={{uri: this.props.product.image}} style={style.image}/>
+                <Image source={{uri:this.state.orders.image}} style={style.image}/>
                 <View style={style.border} />
               </Button>
             </CardItem>
@@ -42,19 +77,19 @@ constructor(props) {
             >
                 <Body>
                     <Text
-                      style={{fontSize: 16}}
+                      style={{fontSize: 17}}
                       numberOfLines={1}
-                    >{this.props.product.title}</Text>
+                    >{this.state.orders.name}</Text>
                     <View style={{flex: 1, width: '100%', alignItems: 'center'}}>
+                      <View />
+                      <Text style={style.price}>PRICE: ${(this.state.orders.price/100).toFixed(2)}</Text>
+                      <Text style={style.price}>PRICE: ${this.state.qty.quantity}</Text>
                       <View style={style.line} />
-                      <Text style={style.price}>{this.props.product.price}</Text>
-                      <View style={style.line} />
-                    </View>
+                      </View>
                 </Body>
               </Button>
             </CardItem>
           </Card>
-      </Col>
     );
   }
 
@@ -64,11 +99,9 @@ constructor(props) {
 }
 
 const style = {
-  button: {flex: 1, height: 250, paddingLeft: 4, paddingRight: 4},
-  image: {height: 250, width: null, flex: 1},
+  button: {flex: 1, height: 150},
+  image: {height: 150, width: 340},
   leftMargin: {
-    marginLeft: 7,
-    marginRight: 0,
     marginBottom: 7
   },
   rightMargin: {
@@ -78,22 +111,19 @@ const style = {
   },
   border: {
     position: 'absolute',
-    top: 10,
-    left: 10,
-    right: 10,
-    bottom: 10,
-    borderWidth: 1,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderWidth: 0,
     borderColor: 'rgba(253, 253, 253, 0.2)'
   },
   price: {
-    fontSize: 16,
-    paddingLeft: 5,
-    paddingRight: 5,
+    fontSize: 20,
     zIndex: 1000,
     backgroundColor: '#fdfdfd'
   },
   line: {
-    width: '100%',
     height: 1,
     backgroundColor: '#7f8c8d',
     position: 'absolute',

@@ -41,18 +41,26 @@ componentWillMount()
          })
           .then((response) => response.json())
           .then((responseJson) => {
-            //let obj = responseJson;
-            //obj.data.map((item, index) => {
+            let obj = responseJson;
+            obj.data.map((item, index) => {
  //this.setState({name: JSON.stringify(item.product.name)});
- //this.setState({image: JSON.stringify(item.product.image)});
+ //this.setState({image: JSON.stringiitem.product.image)});
  //this.setState({price: JSON.stringify(item.product.price)});
+ /*this.setState({name: JSON.parse(JSON.stringify(item.product.name))});
+ this.setState({image: JSON.parse(JSON.stringify(item.product.image))});
+ this.setState({price: JSON.parse(JSON.stringify(item.product.price))});
+ console.log(JSON.stringify(item.product));*/
+
+ //Alert.alert(JSON.stringify(item.product.name));
+ //Alert.alert(JSON.stringify(this.state.items.price));
  //Alert.alert(JSON.stringify(item.product));
 });
           })
           .catch((error) => {
             console.error(error);
+            //Alert.alert("Too many requests!");
           });
-    //  });
+      });
 
 }
       

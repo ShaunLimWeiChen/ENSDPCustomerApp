@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, Alert } from 'react-native';
 import { Container, View, Icon, Left, Button, Item, Input } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -16,52 +16,72 @@ import { GiftedChat } from 'react-native-gifted-chat';
 
 export default class Newsletter extends Component {
   constructor(props) {
-      super(props);
-      this.state = {
-        email: '',
-        messages: [],
-      }
+    super(props);
+    this.state = {
+      email: '',
+      conversations: [],
+    }
   }
 
 
   componentWillMount() {
-      AsyncStorage.getItem('token')
-.then((value) => {
-         fetch('https://shiraishi.ksmz.moe/api/chat',
-         {
-          method: 'get',
-          dataType: 'json',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + value
-          }
-         })
-          .then((response) => response.json())
-          .then((responseJson) => {
-            //let obj = responseJson;
-            //obj.data.map((item, index) => {
- //this.setState({name: JSON.stringify(item.product.name)});
- //this.setState({image: JSON.stringify(item.product.image)});
- //this.setState({price: JSON.stringify(item.product.price)});
- //Alert.alert(JSON.stringify(item.product));
-});
-          })
-          .catch((error) => {
-            console.error(error);
-          });
+    var chats = require('./datatest/chat.json');
+    this.setState({conversations: chats});
+    //Alert.alert(this.state.messages);
+    //Alert.alert(JSON.stringify(this.state.messages));
+    //Alert.alert(JSON.stringify(this.state.conversations));
+    Alert.alert(JSON.stringify(chats));
+    for (var i=0; i<chats.length; i++){
+
+    }
     this.setState({
       messages: [
-        {
+      {
+        _id: 1,
+        text: chats[1].message,
+        createdAt: chats[1].sent,
+        user: {
           _id: 1,
-          text: 'mao test',
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: 'React Native',
-            avatar: 'https://picsum.photos/400?image=329',
-          },
+          name: 'React Native',
+          avatar: 'https://picsum.photos/400?image=329',
         },
+      },
+      ],
+       messages: [
+      {
+        _id: 2,
+        text: chats[2].message,
+        createdAt: chats[2].sent,
+        user: {
+          _id: 2,
+          name: 'React Native',
+          avatar: 'https://picsum.photos/400?image=329',
+        },
+      },
+      ],
+       messages: [
+      {
+        _id: 3,
+        text: chats[3].message,
+        createdAt: chats[3].sent,
+        user: {
+          _id: 1,
+          name: 'React Native',
+          avatar: 'https://picsum.photos/400?image=329',
+        },
+      },
+      ],
+       messages: [
+      {
+        _id: 4,
+        text: chats[4].message,
+        createdAt: chats[4].sent,
+        user: {
+          _id: 2,
+          name: 'React Native',
+          avatar: 'https://picsum.photos/400?image=329',
+        },
+      },
       ],
     })
   }
@@ -76,25 +96,25 @@ export default class Newsletter extends Component {
   render() {
     var left = (
       <Left style={{flex:1}}>
-        <Button transparent onPress={() => Actions.pop()}>
-          <Icon name="ios-close" size={38} style={{fontSize: 38}} /> 
-        </Button>
+      <Button transparent onPress={() => Actions.pop()}>
+      <Icon name="ios-close" size={38} style={{fontSize: 38}} /> 
+      </Button>
       </Left>
-    );
+      );
     return(
       <Container style={{backgroundColor: '#fdfdfd'}}>
-          <Navbar left={left} title="Messages" />
-           <GiftedChat
-                messages={this.state.messages}
-                onSend={messages => this.onSend(messages)}
-                user={{
-                  _id: 1,
-                }}
-              />
-            
-      </Container>
-    );
-  }
+      <Navbar left={left} title="Messages" />
+      <GiftedChat
+      messages={this.state.messages}
+      onSend={messages => this.onSend(messages)}
+      user={{
+        _id: 1,
+      }}
+      />
 
-  
-}
+      </Container>
+      );
+    }
+
+
+  }

@@ -100,12 +100,12 @@ menuItems = [
     icon: 'md-phone-portrait',
     key: 'contact'
   },
-    {
+      {
     id: 23,
-    key: 'messages',
-    title: 'Messages',
+    key: 'conversations',
+    title: 'Conversations',
     icon: 'md-paper',
-    key: 'messages'
+    key: 'conversations'
   },
   {
     id: 25,
@@ -171,12 +171,12 @@ menuItems = [
     icon: 'md-phone-portrait',
     key: 'contact'
   },
-    {
+   {
     id: 23,
-    key: 'messages',
-    title: 'Messages',
+    key: 'conversations',
+    title: 'Conversations',
     icon: 'md-paper',
-    key: 'messages'
+    key: 'conversations'
   },
   {
     id: 25,

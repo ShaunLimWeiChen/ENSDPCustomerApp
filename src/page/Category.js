@@ -16,7 +16,6 @@ import SideMenu from '../component/SideMenu';
 import SideMenuDrawer from '../component/SideMenuDrawer';
 import Product from '../component/Product';
 
-
 export default class Category extends Component {
   constructor(props) {
       super(props);
@@ -55,7 +54,7 @@ export default class Category extends Component {
       }
       */
       componentWillMount() {
-     var products = require('./product.json');
+     var products = require('./datatest/product.json');
     this.setState({items: products});
   }
 
