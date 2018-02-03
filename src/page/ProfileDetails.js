@@ -22,7 +22,7 @@ export default class ProfileDetails extends Component {
       };
   }
 
-/*
+
   componentWillMount()
   {
      AsyncStorage.getItem('user').then((value) =>
@@ -33,7 +33,7 @@ export default class ProfileDetails extends Component {
   }
 });
 }
-*/
+
 
 
   render() {
@@ -60,7 +60,7 @@ export default class ProfileDetails extends Component {
         <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', paddingLeft: 50, paddingRight: 50}}>
           <View style={{marginBottom: 35, width: '100%'}}>
             <Text style={{fontSize: 24, fontWeight: 'bold', textAlign: 'left', width: '100%', color: Colors.navbarBackgroundColor}}>Profile Page </Text>
-            <Text style={{fontSize: 18, textAlign: 'left', width: '100%', color: '#687373'}}>mao@m.m</Text>
+            <Text style={{fontSize: 18, textAlign: 'left', width: '100%', color: '#687373'}}>{this.state.username}</Text>
           </View>
           {this.state.hasError?<Text style={{color: "#c0392b", textAlign: 'center', marginTop: 10}}>{this.state.errorText}</Text>:null}
           <View style={{alignItems: 'center'}}>

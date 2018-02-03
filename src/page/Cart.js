@@ -8,6 +8,8 @@ import { Alert, AsyncStorage } from 'react-native';
 import { Container, Content, View, Header, Icon, Button, Left, Right, Body, Title, List, ListItem, Thumbnail, Grid, Col } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import { Card } from 'react-native-material-design';
+import ZoomImage from 'react-native-zoom-image';
+import {Easing} from 'react-native'; // import Easing if you want to customize easing function
 
 // Our custom files and classes import
 import Colors from '../Colors';
@@ -80,7 +82,14 @@ export default class Cart extends Component {
           last={this.state.cartItems.length === i+1}
           onPress={() => this.itemClicked(item)}
         >
-          <Thumbnail square style={{width: 110, height: 100}} source={{ uri: item.image }} />
+          <ZoomImage
+  source={{uri: item.image}}
+  imgStyle={{width: 110, height: 100}}
+  style={styles.img}
+  duration={200}
+  enableScaling={false}
+  easingFunc={Easing.ease}
+/>
           <Body style={{paddingLeft: 10}}>
             <Text style={{fontSize: 18}}>
               {item.quantity > 1 ? item.quantity+"x " : null}

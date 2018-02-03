@@ -15,6 +15,7 @@ import Navbar from '../component/Navbar';
 import SideMenu from '../component/SideMenu';
 import SideMenuDrawer from '../component/SideMenuDrawer';
 import Product from '../component/Product';
+import Home from './Home';
 
 export default class Category extends Component {
   constructor(props) {

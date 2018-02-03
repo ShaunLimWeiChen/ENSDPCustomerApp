@@ -110,6 +110,10 @@ else
         {
           AsyncStorage.setItem('role', "Merchant");
         }
+        else
+        {
+          AsyncStorage.setItem('role', "Customer");
+        }
         this.setState({loggedIn:true});
         AsyncStorage.setItem('user', username);
         AsyncStorage.setItem('token', responseJson.access_token)

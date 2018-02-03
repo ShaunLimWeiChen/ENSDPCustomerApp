@@ -25,24 +25,25 @@ export default class product extends Component {
     }
 
 
-componentWillMount()
-{
-        AsyncStorage.getItem('token')
-.then((value) => {
-         fetch('https://shiraishi.ksmz.moe/api/products?limit=30',
-         {
-          method: 'get',
-          dataType: 'json',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + value
-          }
-         })
-          .then((response) => response.json())
-          .then((responseJson) => {
-            let obj = responseJson;
-            obj.data.map((item, index) => {
+
+//componentWillMount()
+//{
+//        AsyncStorage.getItem('token')
+//.then((value) => {
+//         fetch('https://shiraishi.ksmz.moe/api/products?limit=30',
+//         {
+//          method: 'get',
+//          dataType: 'json',
+//          headers: {
+//            'Accept': 'application/json',
+//            'Content-Type': 'application/json',
+//            'Authorization': 'Bearer ' + value
+//          }
+//         })
+//          .then((response) => response.json())
+//          .then((responseJson) => {
+//            let obj = responseJson;
+//            obj.data.map((item, index) => {
  //this.setState({name: JSON.stringify(item.product.name)});
  //this.setState({image: JSON.stringiitem.product.image)});
  //this.setState({price: JSON.stringify(item.product.price)});
@@ -54,15 +55,16 @@ componentWillMount()
  //Alert.alert(JSON.stringify(item.product.name));
  //Alert.alert(JSON.stringify(this.state.items.price));
  //Alert.alert(JSON.stringify(item.product));
-});
-          })
-          .catch((error) => {
-            console.error(error);
-            //Alert.alert("Too many requests!");
-          });
-      });
+ //});
+ //         })
+ //         .catch((error) => {
+ //           console.error(error);
+ //           //Alert.alert("Too many requests!");
+ //         });
+ //     });
 
-}
+//}
+
       
       
   render() {

@@ -118,13 +118,6 @@ menuItems = [
 }
 else if (value == "Merchant")
  {
-menuItems = [
-  {
-    id: 4,
-    title: 'PRODUCTS'
-  }
-];
-
 
  menusSecondaryItems = [
 {
@@ -232,10 +225,10 @@ else if (value === null)
   },
   {
     id: 23,
-    key: 'newsletter',
-    title: 'Newsletter',
+    key: 'messages',
+    title: 'Conversations',
     icon: 'md-paper',
-    key: 'newsletter'
+    key: 'messages'
   },
   {
     id: 25,
@@ -243,6 +236,13 @@ else if (value === null)
     title: 'QR Code',
     icon: 'md-paper',
     key: 'qrcode'
+  },
+  {
+     id: 27,
+    key: 'qrgenerator',
+    title: 'QR Generator',
+    icon: 'md-paper',
+    key: 'qrgenerator'
   }
 ];
 }

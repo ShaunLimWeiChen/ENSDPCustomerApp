@@ -22,7 +22,7 @@ export default class TransactionHistory extends Component {
       };
     }
 
-
+/*
 componentWillMount()
 {
         AsyncStorage.getItem('token')
@@ -59,6 +59,7 @@ componentWillMount()
       });
 
 }
+*/
       
       
   render() {

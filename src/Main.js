@@ -32,6 +32,8 @@ import ChangePassword from './page/ChangePassword';
 import ProfileDetails from './page/ProfileDetails';
 import TransactionHistory from './component/TransactionHistory';
 import Chats from './page/Chats';
+import QRGenerator from './page/QRGenerator';
+import Confirmation from './page/Confirmation';
 
 export default class Main extends Component {
   componentWillMount = () => {
@@ -64,6 +66,8 @@ export default class Main extends Component {
            <Scene key= "changepassword" component={ChangePassword} hideNavBar />
            <Scene key="profiledetails" component={ProfileDetails} hideNavBar />
            <Scene key="conversations" component={Chats} hideNavBar />
+           <Scene key="qrgenerator" component={QRGenerator} hideNavBar />
+           <Scene key="confirmation" component={Confirmation} hideNavBar />
           </Scene>
         </Router>
       </Root>

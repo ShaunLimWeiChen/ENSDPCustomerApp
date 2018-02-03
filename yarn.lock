@@ -229,7 +229,7 @@ babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@^6.0.0, babel-core@^6.24.1, babel-core@^6.26.0, babel-core@^6.7.2:
+babel-core@^6.0.0, babel-core@^6.24.1, babel-core@^6.25.0, babel-core@^6.26.0, babel-core@^6.7.2:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.26.0.tgz#af32f78b31a6fcef119c87b0fd8d9753f03a0bb8"
   dependencies:
@@ -384,6 +384,15 @@ babel-plugin-external-helpers@^6.18.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-external-helpers/-/babel-plugin-external-helpers-6.22.0.tgz#2285f48b02bd5dede85175caf8c62e86adccefa1"
   dependencies:
     babel-runtime "^6.22.0"
+
+babel-plugin-flow-react-proptypes@^9.1.1:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-flow-react-proptypes/-/babel-plugin-flow-react-proptypes-9.2.0.tgz#d32594b5c85ea90cb625e10f9954d114526ddeae"
+  dependencies:
+    babel-core "^6.25.0"
+    babel-template "^6.25.0"
+    babel-traverse "^6.25.0"
+    babel-types "^6.25.0"
 
 babel-plugin-istanbul@^4.0.0:
   version "4.1.5"
@@ -833,7 +842,7 @@ babel-runtime@^6.0.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtim
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
 
-babel-template@^6.16.0, babel-template@^6.24.1, babel-template@^6.26.0:
+babel-template@^6.16.0, babel-template@^6.24.1, babel-template@^6.25.0, babel-template@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-template/-/babel-template-6.26.0.tgz#de03e2d16396b069f46dd9fff8521fb1a0e35e02"
   dependencies:
@@ -843,7 +852,7 @@ babel-template@^6.16.0, babel-template@^6.24.1, babel-template@^6.26.0:
     babylon "^6.18.0"
     lodash "^4.17.4"
 
-babel-traverse@^6.18.0, babel-traverse@^6.24.1, babel-traverse@^6.26.0:
+babel-traverse@^6.18.0, babel-traverse@^6.24.1, babel-traverse@^6.25.0, babel-traverse@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-traverse/-/babel-traverse-6.26.0.tgz#46a9cbd7edcc62c8e5c064e2d2d8d0f4035766ee"
   dependencies:
@@ -857,7 +866,7 @@ babel-traverse@^6.18.0, babel-traverse@^6.24.1, babel-traverse@^6.26.0:
     invariant "^2.2.2"
     lodash "^4.17.4"
 
-babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.26.0:
+babel-types@^6.18.0, babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.25.0, babel-types@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-types/-/babel-types-6.26.0.tgz#a3b073f94ab49eb6fa55cd65227a334380632497"
   dependencies:
@@ -3385,6 +3394,10 @@ punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
+qr.js@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
+
 qs@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-4.0.0.tgz#c31d9b74ec27df75e543a86c78728ed8d4623607"
@@ -3470,6 +3483,12 @@ react-native-credit-card-input@^0.4.1:
     lodash.values "^4.3.0"
     prop-types "^15.6.0"
     react-native-flip-card "^3.4.1"
+
+react-native-dialogbox@^0.6.8:
+  version "0.6.8"
+  resolved "https://registry.yarnpkg.com/react-native-dialogbox/-/react-native-dialogbox-0.6.8.tgz#750b4011d9ff8850a42546e7b28869b21fdf1936"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-native-dismiss-keyboard@1.0.0, react-native-dismiss-keyboard@^1.0.0:
   version "1.0.0"
@@ -3600,6 +3619,21 @@ react-native-parsed-text@^0.0.19:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-popup-dialog@^0.10.46:
+  version "0.10.46"
+  resolved "https://registry.yarnpkg.com/react-native-popup-dialog/-/react-native-popup-dialog-0.10.46.tgz#32461959b4423e585edbf83dd271ff75da5e9a03"
+  dependencies:
+    babel-plugin-flow-react-proptypes "^9.1.1"
+    prop-types "^15.6.0"
+
+react-native-qrcode@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/react-native-qrcode/-/react-native-qrcode-0.2.6.tgz#dd92f151c118860092af9fa5bc0995f2f9dddb16"
+  dependencies:
+    create-react-class "^15.6.0"
+    prop-types "^15.5.10"
+    qr.js "0.0.0"
+
 react-native-router-flux@^4.0.0-beta.9:
   version "4.0.0-beta.28"
   resolved "https://registry.yarnpkg.com/react-native-router-flux/-/react-native-router-flux-4.0.0-beta.28.tgz#1d39cf176c88d0658af03cfa80dfb4a8eb284619"
@@ -3619,6 +3653,10 @@ react-native-scrollable-mixin@^1.0.1:
 react-native-scroller@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-native-scroller/-/react-native-scroller-0.0.6.tgz#dea8c89bd1ca2d2445fbb6b3a90960df6c1767ff"
+
+react-native-slideshow@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-slideshow/-/react-native-slideshow-1.0.1.tgz#1eac6bd5d1362aac52b8a2f33f3ebc1f88da9402"
 
 react-native-smart-loading-spinner-overlay@^1.0.2:
   version "1.0.2"
@@ -3671,6 +3709,10 @@ react-native-view-transformer@0.0.28:
   dependencies:
     react-native-gesture-responder "0.1.1"
     react-native-scroller "0.0.6"
+
+react-native-zoom-image@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-zoom-image/-/react-native-zoom-image-0.1.2.tgz#33c26744ba47ed5e0637925b92a7bf1e1c8c4515"
 
 react-native@0.46.2:
   version "0.46.2"
