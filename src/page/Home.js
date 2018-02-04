@@ -4,7 +4,7 @@
 
 // React native and others libraries imports
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { Image, Stylesheet } from 'react-native';
 import { Container, Content, View, Button, Left, Right, Icon, Card, CardItem, cardBody } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import Slideshow from 'react-native-slideshow';

@@ -23,6 +23,7 @@
     "react-native-maps": "^0.15.3",
     "react-native-material-cards": "^1.0.7",
     "react-native-material-design": "^0.3.7",
+    "react-native-parallax-view": "^2.0.6",
     "react-native-popup-dialog": "^0.10.46",
     "react-native-qrcode": "^0.2.6",
     "react-native-router-flux": "^4.0.0-beta.9",
@@ -30,6 +31,7 @@
     "react-native-smart-loading-spinner-overlay": "^1.0.2",
     "react-native-snap-carousel": "^3.6.0",
     "react-native-swipe-list-view": "^1.0.5",
+    "react-native-swipeable-parallax-carousel": "^1.1.0",
     "react-native-zoom-image": "^0.1.2"
   },
   "devDependencies": {

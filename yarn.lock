@@ -3615,6 +3615,12 @@ react-native-material-design@^0.3.7:
     react-native-material-design-styles "git+https://github.com/react-native-material-design/react-native-material-design-styles.git"
     react-native-vector-icons "^2.0.1"
 
+react-native-parallax-view@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-parallax-view/-/react-native-parallax-view-2.0.6.tgz#7de78edb7a2a0aba6c01b99fce828d387cec3e93"
+  dependencies:
+    react-native-scrollable-mixin "^1.0.1"
+
 react-native-parsed-text@^0.0.19:
   version "0.0.19"
   resolved "https://registry.yarnpkg.com/react-native-parsed-text/-/react-native-parsed-text-0.0.19.tgz#1aacca6f9ee82f939f60ef985df90c97bd55c45a"
@@ -3680,6 +3686,10 @@ react-native-snap-carousel@^3.6.0:
 react-native-swipe-list-view@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/react-native-swipe-list-view/-/react-native-swipe-list-view-1.0.5.tgz#e62fe0615afd91aa18e7bf5ad05ab8d29a0dc9aa"
+
+react-native-swipeable-parallax-carousel@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-swipeable-parallax-carousel/-/react-native-swipeable-parallax-carousel-1.1.0.tgz#eceab9cb98814dcde5d85a2a7897d36da912e99c"
 
 react-native-tab-view@^0.0.70:
   version "0.0.70"

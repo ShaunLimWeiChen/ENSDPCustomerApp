@@ -8,6 +8,8 @@ import { AsyncStorage, Alert, ScrollView } from 'react-native';
 import { View, Col, CardItem, Body, Button } from 'native-base';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 import { Actions } from 'react-native-router-flux';
+import Slideshow from 'react-native-slideshow';
+import SwipeableParallaxCarousel from 'react-native-swipeable-parallax-carousel';
 
 // Our custom files and classes import
 //import Colors from '../Colors';
@@ -23,8 +25,6 @@ export default class product extends Component {
            price: []
       };
     }
-
-
 
 //componentWillMount()
 //{
@@ -69,7 +69,7 @@ export default class product extends Component {
       
   render() {
     return(
-              <Card style={{width:340, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}} isDark>
+      <Card style={{width:340, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}>
   <CardImage source={{uri: this.props.product.image}}/>
   <CardTitle title={this.props.product.name} subtitle={"$" + (this.props.product.price/100).toFixed(2)} style={{fontSize: 14}}/>
   <CardAction>

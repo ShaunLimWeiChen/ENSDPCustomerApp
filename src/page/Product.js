@@ -269,7 +269,7 @@ export default class Product extends Component {
 
 const style = {
   button: {flex: 1, height: 150},
-  image: {height: 200, width: 370},
+  image: {height: 200, width: Dimensions.get('window').width,},
   leftMargin: {
     marginBottom: 7
   },
