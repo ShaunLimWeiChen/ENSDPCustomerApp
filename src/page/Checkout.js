@@ -214,7 +214,7 @@ export default class Checkout extends Component {
 
   checkout() {
     console.log(this.state);
-    Actions.qrgenerator();
+    Actions.checkoutchoice();
   }
 
 }

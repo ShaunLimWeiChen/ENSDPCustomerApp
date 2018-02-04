@@ -30,7 +30,6 @@ export default class Newsletter extends Component {
     //Alert.alert(this.state.messages);
     //Alert.alert(JSON.stringify(this.state.messages));
     //Alert.alert(JSON.stringify(this.state.conversations));
-    Alert.alert(JSON.stringify(chats));
     for (var i=0; i<chats.length; i++){
 
     }

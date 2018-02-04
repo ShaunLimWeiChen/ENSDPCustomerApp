@@ -2645,10 +2645,6 @@ lodash.compact@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/lodash.compact/-/lodash.compact-3.0.1.tgz#540ce3837745975807471e16b4a2ba21e7256ca5"
 
-lodash.debounce@4.0.8:
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
-
 lodash.escape@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/lodash.escape/-/lodash.escape-3.2.0.tgz#995ee0dc18c1b48cc92effae71a10aab5b487698"
@@ -3435,9 +3431,9 @@ raw-body@~2.1.2:
     iconv-lite "0.4.13"
     unpipe "1.0.0"
 
-react-addons-shallow-compare@15.6.0:
-  version "15.6.0"
-  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.0.tgz#b7a4e5ff9f2704c20cf686dd8a05dd08b26de252"
+react-addons-shallow-compare@15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.2.tgz#198a00b91fc37623db64a28fd17b596ba362702f"
   dependencies:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
@@ -3467,6 +3463,12 @@ react-mixin@^3.0.5:
 react-native-camera@^0.6:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-0.6.0.tgz#dd2760b7857d660761c78f2da575b494fdc8dcb5"
+
+react-native-cards@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-native-cards/-/react-native-cards-1.1.4.tgz#f5e6511d9b1b04b3891dfc31eff939770e9b778d"
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-communications@2.2.1:
   version "2.2.1"
@@ -3668,13 +3670,16 @@ react-native-smart-timer-enhance@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/react-native-smart-timer-enhance/-/react-native-smart-timer-enhance-1.0.3.tgz#47ddc19be5a6c19184449039495f25546bcd94fe"
 
-react-native-snap-carousel@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-2.4.0.tgz#e0711cc804ca5b11f1c154ba61f5884512a27a71"
+react-native-snap-carousel@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-3.6.0.tgz#bbd4c988314500af4a695f787f592fdfcd5c3df1"
   dependencies:
-    lodash.debounce "4.0.8"
-    prop-types "^15.5.10"
-    react-addons-shallow-compare "15.6.0"
+    prop-types "^15.6.0"
+    react-addons-shallow-compare "15.6.2"
+
+react-native-swipe-list-view@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-swipe-list-view/-/react-native-swipe-list-view-1.0.5.tgz#e62fe0615afd91aa18e7bf5ad05ab8d29a0dc9aa"
 
 react-native-tab-view@^0.0.70:
   version "0.0.70"

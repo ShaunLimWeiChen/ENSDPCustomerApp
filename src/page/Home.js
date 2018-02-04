@@ -32,27 +32,27 @@ export default class Home extends Component {
      dataSource: [
        {
                 "title": "POPULAR: Rempel-Stracke",
-                "price": 35658,
+                "caption": "PRICE: $" + (35658/100).toFixed(2),
                 "url": "https://picsum.photos/400?image=375"
             },
             {
                 "title": "HOT: Sawayn Inc",
-                "price": 39037,
+                "caption": "PRICE: $" + (39037/100).toFixed(2),
                 "url": "https://picsum.photos/400?image=373"
             },
             {
                 "title": "NEWEST: Sawayn, Grady and Mayert",
-                "price": 54561,
+                "caption": "PRICE: $" + (54561/100).toFixed(2),
                 "url": "https://picsum.photos/400?image=123"
             },
             {
                 "title": "ALL TIME: Tillman, Keebler and Bode",
-                "price": 1458,
+                "caption": "PRICE: $" + (1458/100).toFixed(2),
                 "url": "https://picsum.photos/400?image=44"
             },
             {
                 "title": "VALUE FOR MONEY: Hoeger, Bahringer and Toy",
-                "price": 47034,
+                "caption": "PRICE: $" + (47034/100).toFixed(2),
                 "url": "https://picsum.photos/400?image=386"
             },
       ],

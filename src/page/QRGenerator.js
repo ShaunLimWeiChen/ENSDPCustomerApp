@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import QRCode from 'react-native-qrcode';
 import { Container, Content, View, Grid, Col, Left, Right, Button, Icon, List, ListItem, Body, Radio, Input, Item } from 'native-base';
 import { Actions } from 'react-native-router-flux'; 
@@ -8,27 +7,38 @@ import {
     StyleSheet,
     TextInput
 } from 'react-native';
+
+import Colors from '../Colors';
+import Text from '../component/Text';
+import Product from '../component/Product';
+import Navbar from '../component/Navbar';
  
 export default class QRGenerator extends Component {
   state = {
-    text: 'http://facebook.github.io/react-native/',
+    text: 'mayu.ksmz.moe',
   };
  
   render() {
+    var left = (
+      <Left style={{flex:1}}>
+        <Button transparent onPress={() => Actions.pop()}>
+          <Icon name="ios-close" size={38} style={{fontSize: 38}} />
+        </Button>
+      </Left>
+    );
     return (
+            <Container style={{backgroundColor: '#fdfdfd'}}>
+       <Navbar left={left} title="PAYMENT" />
       <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          onChangeText={(text) => this.setState({text: text})}
-          value={this.state.text}
-        />
-        <Text style={{fontSize: 18}}>Scan this QR Code to complete payment</Text>
+        <Text style={{fontSize: 18}}>Scan this QR Code to complete payment.</Text>
+        <Text>{"\n"}</Text>
         <QRCode
           value={this.state.text}
           size={200}
           bgColor='black'
           fgColor='white'/>
       </View>
+      </Container>
     );
   };
 }

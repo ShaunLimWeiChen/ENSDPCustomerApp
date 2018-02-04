@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { Image, AsyncStorage } from 'react-native';
 import { View, Col, CardItem, Body, Button } from 'native-base';
-import { Card } from 'react-native-material-design'
+import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 import { Actions } from 'react-native-router-flux';
 
 // Our custom files and classes import
@@ -18,32 +18,20 @@ export default class product extends Component {
   render() {
     return(
 
-        <Card style={{width:325, height: 210, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}>
-            <CardItem cardBody style={{flex:1}}>
-              <Button transparent style={style.button} onPress={() => this.pressed()}>
-                <Image source={{uri: this.props.product.image}} style={style.image}/>
-                <View style={style.border} />
-              </Button>
-            </CardItem>
-            <CardItem style={{paddingTop: 0}}>
-            <Button style={{flex: 1, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, paddingTop: 0}}
-              transparent
-              onPress={() => this.pressed()}
-            >
-                <Body>
-                    <Text
-                      style={{fontSize: 17}}
-                      numberOfLines={1}
-                    >{this.props.product.name}</Text>
-                    <View style={{flex: 1, width: '100%', alignItems: 'center'}}>
-                      <View />
-                      <Text style={style.price}>PRICE: ${(this.props.product.price/100).toFixed(2)}</Text>
-                      <View style={style.line} />
-                    </View>
-                </Body>
-              </Button>
-            </CardItem>
-          </Card>
+      <Card>
+  <CardImage source={{uri: {this.props.product.image}} style={{width:340, borderBottomLeftRadius:10, borderBottomRightRadius:10, borderTopLeftRadius:10, borderTopRightRadius:10}}/>
+  <CardTitle title= {this.props.product.name} subtitle={"$" + (this.props.product.prices)/100.toFixed(2)}/>
+  <CardAction>
+    <CardButton
+      onPress={() => {this.pressed()}}
+      title="View"
+    />
+    <CardButton
+      onPress={() => {this.pressed()}}
+      title="View"
+    />
+  </CardAction>
+</Card>
     );
   }
 

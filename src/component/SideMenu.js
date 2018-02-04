@@ -63,12 +63,6 @@ menuItems = [
   key: 'logout'
 },
   {
-    id: 276,
-    title: 'Transactions History',
-    icon: 'ios-person-add',
-    key: 'transactionhistory'
-  },
-  {
   id: 198,
   title: 'Change Password',
   icon: 'ios-person-add',
@@ -102,17 +96,10 @@ menuItems = [
   },
       {
     id: 23,
-    key: 'conversations',
-    title: 'Conversations',
+    key: 'messages',
+    title: 'Messages',
     icon: 'md-paper',
-    key: 'conversations'
-  },
-  {
-    id: 25,
-    key: 'qrcode',
-    title: 'QR Code',
-    icon: 'md-paper',
-    key: 'qrcode'
+    key: 'messages'
   }
 ];
 }
@@ -133,22 +120,10 @@ else if (value == "Merchant")
   key: 'logout'
 },
   {
-    id: 276,
-    title: 'Sales History',
-    icon: 'ios-person-add',
-    key: 'transactionhistory'
-  },
-  {
   id: 198,
   title: 'Change Password',
   icon: 'ios-person-add',
   key: 'changepassword'
-},
-{
-  id: 199,
-  title: 'Manage Products',
-  icon: 'ios-person-add',
-  key: 'changedetails'
 },
   {
     id: 20,
@@ -170,13 +145,6 @@ else if (value == "Merchant")
     title: 'Conversations',
     icon: 'md-paper',
     key: 'conversations'
-  },
-  {
-    id: 25,
-    key: 'qrcode',
-    title: 'QR Code',
-    icon: 'md-paper',
-    key: 'qrcode'
   }
 ];
 }
@@ -205,7 +173,7 @@ else if (value === null)
 },
   {
     id: 19,
-    title: 'Wish List',
+    title: 'WishList',
     icon: 'heart',
     key: 'wishlist'
   },
@@ -222,27 +190,6 @@ else if (value === null)
     title: 'Contact Us',
     icon: 'md-phone-portrait',
     key: 'contact'
-  },
-  {
-    id: 23,
-    key: 'messages',
-    title: 'Conversations',
-    icon: 'md-paper',
-    key: 'messages'
-  },
-  {
-    id: 25,
-    key: 'qrcode',
-    title: 'QR Code',
-    icon: 'md-paper',
-    key: 'qrcode'
-  },
-  {
-     id: 27,
-    key: 'qrgenerator',
-    title: 'QR Generator',
-    icon: 'md-paper',
-    key: 'qrgenerator'
   }
 ];
 }

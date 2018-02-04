@@ -9,6 +9,8 @@ import { View, Container, Content, Button, Left, Right, Icon, Picker, Item, Grid
 import { Actions } from 'react-native-router-flux';
 import { Card } from 'react-native-material-design'
 import Carousel, { Pagination } from 'react-native-snap-carousel';
+import ZoomImage from 'react-native-zoom-image';
+import {Easing} from 'react-native'; // import Easing if you want to customize easing function
 
 // Our custom files and classes import
 import Colors from '../Colors';
@@ -66,7 +68,13 @@ export default class Product extends Component {
       <Container style={{backgroundColor: '#fdfdfd'}}>
         <Navbar left={left} right={right} title={this.props.product.title} />
         <Content>
-           <Image source={{uri: this.props.product.image}} style={style.image}/>
+            <ZoomImage
+  source={{uri: this.props.product.image}}
+  imgStyle={style.image}
+  duration={200}
+  enableScaling={false}
+  easingFunc={Easing.ease}
+/>
           <View style={{backgroundColor: '#fdfdfd', paddingTop: 10, paddingBottom: 10, paddingLeft: 12, paddingRight: 12, alignItems: 'center'}}>
             <Grid>
               <Col size={3}>
