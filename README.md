@@ -1,9 +1,9 @@
 
-Customer mobile application in React Native for ENSDP.
+Customer mobile application in React Native JavaScript for ENSDP.
 
-Git clone this project. <br/>
-npm install/yarn <br/>
-Run react-native start in the room folder<br/>
-Run react-native run-android in the root folder<br/>
+1. Git clone this project. <br/>
+2. npm install/yarn <br/>
+3. Run react-native start in the room folder<br/>
+4. Run react-native run-android in the root folder<br/>
 
-APK file of available for download here. https://drive.google.com/file/d/10Sa03qcVzv_lpX6gky1hfLnLaY6Io1dz/view?usp=drivesdk
+An APK version is available for download here. https://drive.google.com/file/d/10Sa03qcVzv_lpX6gky1hfLnLaY6Io1dz/view?usp=drivesdk
